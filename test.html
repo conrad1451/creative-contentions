@@ -34,6 +34,13 @@
       // Note: All code, including your function definitions, go below here within this function called programCode
 
 
+
+      // more functions
+      
+      // made some time ago
+      
+      // injuredByFall
+
       var world = [
         [39, 39, 39, 39, 39, 39, 39, 39, 39, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [39, 0, 0, 0, 0, 0, 0, 0, 0, 39, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -7076,12 +7083,12 @@
           healthGain = 3;
         }
 
-        health += healthGain;
+        health += healthGain; // CHQ: violation of clean function rules, mutating a global variable
 
-        quickSelectBarQty[barSlot]--;
+        quickSelectBarQty[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
 
-        mousePressed = false;
-        keys[SHIFT] = false;
+        mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+        keys[SHIFT] = false; // CHQ: violation of clean function rules, mutating a global variable
       };
 
 
@@ -7163,7 +7170,7 @@
 
             fill(255 - quickSelectBarSpecs[i] * filler, quickSelectBarSpecs[i] * filler, 0);
 
-            rect(j, 388, quickSelectBarSpecs[i] / (itemDurabilities[quickSelectBar[i]] / 20), 3);
+            rect(j, 388, quickSelectBarSpecs[i  ] / (itemDurabilities[quickSelectBar[i]] / 20), 3);
 
             if (quickSelectBarSpecs[i] <= 0) {
               quickSelectBarSpecs[i] = 0;
@@ -7192,6 +7199,10 @@
         }
       };
 
+
+
+      // CHQ: violates clean functions by modifying quickSelectBar[barSlot] and world[a][b] 
+      // suggestion: make character an object and grabWaterOrLava a method
       var grabWaterOrLava = function () {
         var mysterybarSlot = (quickSelectBar[barSlot] === 337);
         var waterClicked = (world[a][b] === 11);
@@ -7359,9 +7370,9 @@
         broadcast(selDurability);
         }*/
 
-        blockTargeted = [a, b];
+        blockTargeted = [a, b]; // CHQ: violation of clean function rules, mutating a global variable
 
-        blockStrength = selDurability;
+        blockStrength = selDurability; // CHQ: violation of clean function rules, mutating a global variable
       };
 
 
@@ -7557,7 +7568,8 @@
       };
 
 
-
+      // CHQ: violates rules for clean functions by modifying a variable outside of its scope
+      //  suggestion: Turn character into an object and createNewFurnace as one of its methods
       var createNewFurnace = function () {
         var newFurnace = [0, 0, 0, 50, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -7670,28 +7682,28 @@
 
       var openCloseDoor = function () {
         if (specs[a][b] === 0) {
-          specs[a][b] = 1;
-          specs[a - 1][b] = 1;
+          specs[a][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
+          specs[a - 1][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
         }
         else if (specs[a][b] === 1) {
-          specs[a][b] = 0;
-          specs[a - 1][b] = 0;
+          specs[a][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
+          specs[a - 1][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
         }
 
-        mouseButton = 2;
+        mouseButton = 2; // CHQ: violation of clean function rules, mutating a global variable
       };
 
       var openCloseUpperDoor = function () {
         if (specs[a][b] === 0) {
-          specs[a][b] = 1;
-          specs[a - (-1)][b] = 1;
+          specs[a][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
+          specs[a - (-1)][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
         }
         else if (specs[a][b] === 1) {
-          specs[a][b] = 0;
-          specs[a - (-1)][b] = 0;
+          specs[a][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
+          specs[a - (-1)][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
         }
 
-        mouseButton = 2;
+        mouseButton = 2; // CHQ: violation of clean function rules, mutating a global variable
       };
 
       // Conrad: Allows character to put on armor
@@ -8225,6 +8237,8 @@
       var injuredByFall = function (theDecision) {
         if (theDecision) {
           if (fallTix > 10) {
+            // violation of clean function rules - function injuredByFall is modifying 4 variables that exists OUTSIDE of
+            // it and accessing 2 variables that exists OUTSIDE of it
             blocksFallen++;
           }
         }
@@ -9311,27 +9325,27 @@
         }
 
         if (furnaceClicked) {
-          isSmelting = true;
-          blockTargeted = [a, b];
-          mousePressed = false;
+          isSmelting = true; // CHQ: violation of clean function rules, mutating a global variable
+          blockTargeted = [a, b]; // CHQ: violation of clean function rules, mutating a global variable
+          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (chestClicked) {
-          onChest = true;
-          blockTargeted = [a, b];
-          mousePressed = false;
+          onChest = true; // CHQ: violation of clean function rules, mutating a global variable
+          blockTargeted = [a, b]; // CHQ: violation of clean function rules, mutating a global variable
+          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (craftingTableClicked) {
-          isCrafting = true;
+          isCrafting = true; // CHQ: violation of clean function rules, mutating a global variable
         }
         else if (diamondOreClicked && diamondZSelected && gameHacks) {
-          heartsShowing = true;
+          heartsShowing = true; // CHQ: violation of clean function rules, mutating a global variable
 
-          quickSelectBarQty[barSlot]--;
+          quickSelectBarQty[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
 
           if (shieldsShowing) {
-            shieldsShowingCount += 1000;
+            shieldsShowingCount += 1000; // CHQ: violation of clean function rules, mutating a global variable
           }
         }
         else if (doorClicked) {
@@ -9343,7 +9357,7 @@
 
         if (swordSelected && gameHacks) {
           spawnMobs(b * 40, a * 40, 0);
-          mousePressed = false;
+          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (health < MAX_HEALTH) {
@@ -9528,7 +9542,7 @@
 
             spawnEntity(b * 40 + random(0, 20), a * 40 + 10, 0, 28);
 
-            world[a - 1][b] = 0;
+            world[a - 1][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
 
             break;
 
@@ -9536,7 +9550,7 @@
 
             spawnEntity(b * 40 + random(0, 20), a * 40 + 10, 0, 28);
 
-            world[a - (-1)][b] = 0;
+            world[a - (-1)][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
 
             break;
 
@@ -9622,6 +9636,9 @@
       };
 
 
+      // CHQ: This violates rules for clean functions by changing the following
+      // quickSelectBar[barSlot], quickSelectBarQty[barSlot] and quickSelectBarSpecs[barSlot]
+      // suggestion: turn character into an object and reduceQtyAndSpecs into one of its methods
       var reduceQtyAndSpecs = function () {
         if (!itemDurabilities[quickSelectBar[barSlot]]) {
           var selectedWater = quickSelectBar[barSlot] === 11;
@@ -9862,7 +9879,9 @@
         if (shake === 2) { shake = - 2; }
         else { shake = 2; }
 
-        oxygen = characterDrowning(inWater, oxygen);
+        var newOxygen = characterDrowning(inWater, oxygen);
+        // split up the line so it is more sound coding
+        oxyen = newOxygen;
 
         for (var L = 0; L < armor / 2; L++) { image(shield, 400 - L * 16 - 40, 312, 16, 24); }
 
