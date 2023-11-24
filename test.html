@@ -7170,7 +7170,7 @@
 
             fill(255 - quickSelectBarSpecs[i] * filler, quickSelectBarSpecs[i] * filler, 0);
 
-            rect(j, 388, quickSelectBarSpecs[i  ] / (itemDurabilities[quickSelectBar[i]] / 20), 3);
+            rect(j, 388, quickSelectBarSpecs[i] / (itemDurabilities[quickSelectBar[i]] / 20), 3);
 
             if (quickSelectBarSpecs[i] <= 0) {
               quickSelectBarSpecs[i] = 0;
@@ -8237,9 +8237,7 @@
       var injuredByFall = function (theDecision) {
         if (theDecision) {
           if (fallTix > 10) {
-            // violation of clean function rules - function injuredByFall is modifying 4 variables that exists OUTSIDE of
-            // it and accessing 2 variables that exists OUTSIDE of it
-            blocksFallen++;
+            blocksFallen++; // CHQ: violation of clean function rules, mutating a global variable
           }
         }
         else {
@@ -9646,22 +9644,22 @@
 
           // Conrad: this triggers the milk buckets
           if (selectedWater || selectedLava) {
-            quickSelectBar[barSlot] = 337;
+            quickSelectBar[barSlot] = 337; // CHQ: violation of clean function rules, mutating a global variable
 
             selectedWater = false;
             selectedLava = false;
 
-            mousePressed = false;
+            mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
           }
           else {
             // Conrad: Reduces amount of item in inventory
             // after placing it into the world
-            quickSelectBarQty[barSlot]--;
+            quickSelectBarQty[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
           }
         }
         else {
           // Conrad: don’t understand purpose of this statement
-          quickSelectBarSpecs[barSlot]--;
+          quickSelectBarSpecs[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
         }
       };
 
@@ -9685,7 +9683,7 @@
 
           if (isAir || isHazard) {
             armTimer = 5;
-            world[a][b] = (quickSelectBar[barSlot]);
+            world[a][b] = (quickSelectBar[barSlot]); // CHQ: violation of clean function rules, mutating a global variable
 
             var isFurnace = world[a][b] === 33;
 
@@ -9700,9 +9698,9 @@
             var isDoor = world[a][b] === 28;
 
             if (isDoor) {
-              specs[a][b] = 1;
-              specs[a - 1][b] = 1;
-              world[a - 1][b] = 29;
+              specs[a][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
+              specs[a - 1][b] = 1; // CHQ: violation of clean function rules, mutating a global variable
+              world[a - 1][b] = 29; // CHQ: violation of clean function rules, mutating a global variable
             }
           }
           else {
@@ -9721,8 +9719,8 @@
         for (var e = 0; e < 2; e++) {
           for (var d = 0; d < 2; d++) {
             if (armorSpecs[e * 2 + d] <= 0) {
-              armorSlots[e * 2 + d] = 0;
-              armorSpecs[e * 2 + d] = 0;
+              armorSlots[e * 2 + d] = 0; // CHQ: violation of clean function rules, mutating a global variable
+              armorSpecs[e * 2 + d] = 0; // CHQ: violation of clean function rules, mutating a global variable
             }
           }
         }
@@ -9731,9 +9729,9 @@
 
       var resetBlockHeld = function () {
         if (holdingQty === 0 || holdingBlock === 0) {
-          holdingBlock = 0;
-          holdingQty = 0;
-          holdingSpecs = 0;
+          holdingBlock = 0; // CHQ: violation of clean function rules, mutating a global variable
+          holdingQty = 0; // CHQ: violation of clean function rules, mutating a global variable
+          holdingSpecs = 0; // CHQ: violation of clean function rules, mutating a global variable
         }
       };
 
