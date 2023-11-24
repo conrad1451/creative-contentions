@@ -3426,6 +3426,7 @@
         }
       };
 
+      // CHQ: This violates rules for clean functions 
       var spawnEntity = function (x, y, t, t2) {
         append(entity.x, x);
         append(entity.y, y);
@@ -3918,32 +3919,22 @@
 
 
 
-      var drawLeatherIcon = function (x, g, h) {
+      var drawLeatherIcon = function (g, h) {
         fill(125, 75, 0);
-
         ellipse(g + 10, h + 10, 15, 20);
-
         triangle(g, h + 1, g + 10, h + 3, g + 5, h + 15);
-
         triangle(g + 20, h + 1, g + 10, h + 3, g + 15, h + 15);
-
         triangle(g, h + 19, g + 10, h + 17, g + 5, h + 5);
-
         triangle(g + 20, h + 19, g + 10, h + 17, g + 15, h + 5);
 
         fill(189, 120, 0);
-
         ellipse(g + 10, h + 10, 11, 16);
-
         triangle(g + 3, h + 3.5, g + 10, h + 3, g + 5, h + 15);
-
         triangle(g + 17, h + 3.5, g + 10, h + 3, g + 15, h + 15);
-
         triangle(g + 3, h + 16.5, g + 10, h + 17, g + 5, h + 5);
-
         triangle(g + 17, h + 16.5, g + 10, h + 17, g + 15, h + 5);
       };
-      var drawEmptyMilkBucket = function (x, g, h) {
+      var drawEmptyMilkBucket = function (g, h) {
         fill(120, 120, 120);
 
         ellipse(g + 10, h + 19, 15, 8);
@@ -3951,11 +3942,10 @@
         ellipse(g + 10, h + 3, 15, 8);
 
         fill(89);
-
         ellipse(g + 10, h + 3, 12, 6);
       };
 
-      var drawFullMilkBucket = function (x, g, h) {
+      var drawFullMilkBucket = function (g, h) {
         fill(120, 120, 120);
 
         ellipse(g + 10, h + 19, 15, 8);
@@ -3966,18 +3956,20 @@
 
         ellipse(g + 10, h + 3, 12, 6);
       };
-      var drawFlintAndSteelIcon = function (x, g, h) {
+
+
+      var drawFlintAndSteelIcon = function (g, h) {
         fill(89, 89, 89);
         triangle(g + 8, h + 20, g + 20, h + 8, g + 20, h + 20);
 
         fill(120);
         ellipse(g + 6, h + 5, 8, 8);
 
-        fill(this.get(g, h));
+        fill(this.get(g, h)); // CHQ - violation
         ellipse(g + 8, h + 6, 7, 7);
       };
 
-      var drawCobbleStoneBlockIcon = function (x, g, h) {
+      var drawCobbleStoneBlockIcon = function (g, h) {
         fill(161, 161, 161);
         strokeWeight(2);
         stroke(71, 71, 71);
@@ -3990,7 +3982,7 @@
       };
 
 
-      var drawBrickBlockIcon = function (x, g, h) {
+      var drawBrickBlockIcon = function (g, h) {
         fill(230, 87, 21);
         rect(g, h, 20, 20);
 
@@ -4010,7 +4002,7 @@
         noStroke();
       };
 
-      var drawWoodenPlankBlockIcon = function (x, g, h) {
+      var drawWoodenPlankBlockIcon = function (g, h) {
         fill(179, 126, 46);
         rect(g, h, 20, 20);
         stroke(102, 67, 33);
@@ -4023,7 +4015,7 @@
         noStroke();
       };
 
-      var drawLogBlockIcon = function (x, g, h) {
+      var drawLogBlockIcon = function (g, h) {
         fill(214, 120, 39);
         rect(g, h, 20, 20);
 
@@ -4037,18 +4029,18 @@
       };
 
 
-      var drawGrassBlockIcon = function (x, g, h) {
+      var drawGrassBlockIcon = function (g, h) {
         fill(209, 87, 0);
         rect(g, h, 20, 20);
         rect(g, h, 20, 5);
       };
 
-      var drawDirtBlockIcon = function (x, g, h) {
+      var drawDirtBlockIcon = function (g, h) {
         fill(140, 58, 0);
         rect(g, h, 20, 20);
       };
 
-      var drawStoneBlockIcon = function (x, g, h) {
+      var drawStoneBlockIcon = function (g, h) {
         fill(212, 212, 212);
         rect(g, h, 20, 20);
       };
@@ -4167,18 +4159,18 @@
 
 
 
-      var drawLeatherHelmetIcon = function (x, g, h) {
+      var drawLeatherHelmetIcon = function (g, h) {
         fill(189, 120, 0);
         stroke(125, 75, 0);
         rect(g, h, 20, 20, 10);
 
         noStroke();
 
-        fill(this.get(g, h));
+        fill(this.get(g, h)); // CHQ: violation
         rect(g + 5, h + 8, 11, 15, 5);
       };
 
-      var drawLeatherShieldIcon = function (x, g, h) {
+      var drawLeatherShieldIcon = function (g, h) {
         fill(189, 120, 0);
         stroke(125, 75, 0);
 
@@ -4186,7 +4178,7 @@
         rect(g, h, 20, 20, 10);
       };
 
-      var drawLeatherPantsIcon = function (x, g, h) {
+      var drawLeatherPantsIcon = function (g, h) {
         fill(189, 120, 0);
         stroke(125, 75, 0);
 
@@ -4195,7 +4187,7 @@
         rect(g, h, 20, 10, 10);
       };
 
-      var drawLeatherShoesIcon = function (x, g, h) {
+      var drawLeatherShoesIcon = function (g, h) {
         fill(189, 120, 0);
         stroke(125, 75, 0);
 
@@ -4205,7 +4197,10 @@
 
       // Conrad - edit here next time by breaking each case into its own function
 
-      // Conrad: has instructions for drawing each type of block in game
+      // Conrad: has instructions for drawing each type of block in game.
+      // x: the id of the block
+      // g: the horizontal position of the icon with respect to the game screen
+      // h: the vertical position of the icon with respect to the game screen
       var drawBlocks = function (x, g, h) {
         noStroke();
         strokeWeight(2);
@@ -4213,31 +4208,31 @@
         switch (x) {
 
           case 1:
-            drawStoneBlockIcon(x, g, h);
+            drawStoneBlockIcon(g, h);
             break;
 
           case 2:
-            drawGrassBlockIcon(x, g, h);
+            drawGrassBlockIcon(g, h);
             break;
 
           case 3:
-            drawDirtBlockIcon(x, g, h);
+            drawDirtBlockIcon(g, h);
             break;
 
           case 4:
-            drawCobbleStoneBlockIcon(x, g, h);
+            drawCobbleStoneBlockIcon(g, h);
             break;
 
           case 5:
-            drawWoodenPlankBlockIcon(x, g, h);
+            drawWoodenPlankBlockIcon(g, h);
             break;
 
           case 6:
-            drawBrickBlockIcon(x, g, h);
+            drawBrickBlockIcon(g, h);
             break;
 
           case 7:
-            drawLogBlockIcon(x, g, h);
+            drawLogBlockIcon(g, h);
             break;
 
           case 8:
@@ -4265,7 +4260,7 @@
             break;
 
           case 17:
-            drawFlintAndSteelIcon(x, g, h);
+            drawFlintAndSteelIcon(g, h);
             break;
 
           case 19:
@@ -4474,31 +4469,31 @@
             break;
 
           case 332:
-            drawLeatherHelmetIcon(x, g, h);
+            drawLeatherHelmetIcon(g, h);
             break;
 
           case 333:
-            drawLeatherShieldIcon(x, g, h);
+            drawLeatherShieldIcon(g, h);
             break;
 
           case 334:
-            drawLeatherPantsIcon(x, g, h);
+            drawLeatherPantsIcon(g, h);
             break;
 
           case 335:
-            drawLeatherShoesIcon(x, g, h);
+            drawLeatherShoesIcon(g, h);
             break;
 
           case 336:
-            drawLeatherIcon(x, g, h);
+            drawLeatherIcon(g, h);
             break;
 
           case 337:
-            drawEmptyMilkBucket(x, g, h);
+            drawEmptyMilkBucket(g, h);
             break;
 
           case 338:
-            drawFullMilkBucket(x, g, h);
+            drawFullMilkBucket(g, h);
             break;
 
         }
@@ -7173,9 +7168,9 @@
             rect(j, 388, quickSelectBarSpecs[i] / (itemDurabilities[quickSelectBar[i]] / 20), 3);
 
             if (quickSelectBarSpecs[i] <= 0) {
-              quickSelectBarSpecs[i] = 0;
-              quickSelectBarQty[i] = 0;
-              quickSelectBar[i] = 0;
+              quickSelectBarSpecs[i] = 0; // CHQ: violation of clean function rules, mutating a global variable
+              quickSelectBarQty[i] = 0; // CHQ: violation of clean function rules, mutating a global variable
+              quickSelectBar[i] = 0; // CHQ: violation of clean function rules, mutating a global variable
             }
           }
 
@@ -7192,7 +7187,7 @@
           }
 
           if (quickSelectBarQty[i] === 0) {
-            quickSelectBar[i] = 0;
+            quickSelectBar[i] = 0; // CHQ: violation of clean function rules, mutating a global variable
           }
 
           textSize(12);
@@ -7211,17 +7206,17 @@
         //          function called 'grabWaterOrLava'
         if ((waterClicked || lavaClicked) && mysterybarSlot) {
           if (quickSelectBarQty[barSlot] === 1) {
-            quickSelectBar[barSlot] = world[a][b];
+            quickSelectBar[barSlot] = world[a][b]; // CHQ: violation of clean function rules, mutating a global variable
           }
           else {
-            quickSelectBarQty[barSlot]--;
+            quickSelectBarQty[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
 
             getItem(world[a][b], 1);
           }
 
-          world[a][b] = 0;
+          world[a][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
 
-          mousePressed = false;
+          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
       };
 
@@ -7305,6 +7300,7 @@
 
 
 
+      // CHQ: Good function passes clean function test
       var degradeByAmount = function (selectedItem) {
         var degradeAmount = 0;
 
@@ -7351,9 +7347,10 @@
       };
 
 
-
+      // CHQ: This violates rules for clean functions 
+      // suggestion: turn character and blocks into objects and changeDurability as a method of blocks
       var changeDurability = function (a, b) {
-        selDurability = blockDurability[world[a][b]];
+        selDurability = blockDurability[world[a][b]]; // CHQ: violation of clean function rules, mutating a global variable
 
         for (var i = 307; i <= 311; i++) {
           if (quickSelectBar[barSlot] === i) {
@@ -7361,7 +7358,7 @@
 
             var divideAmount = (itemID - 305 + blockDurability[world[a][b]] / 50);
 
-            selDurability = selDurability / divideAmount;
+            selDurability = selDurability / divideAmount; // CHQ: violation of clean function rules, mutating a global variable
           }
         }
 
@@ -9399,6 +9396,8 @@
         }
       };
 
+      // CHQ: This violates rules for clean functions 
+      // suggestion: turn character and blocks into objects and harvestBlock as a method of blocks
       var harvestBlock = function () {
         switch (world[a][b]) {
           case 1:
@@ -9604,6 +9603,9 @@
       };
 
 
+      // CHQ: This violates rules for clean functions 
+      // suggestion: turn character and blocks into objects and breakBlocks as a method of blocks
+      // further suggestion: can use the visitor pattern here
       var breakBlocks = function () {
         if (blockStrength === null) {
           changeDurability(a, b);
@@ -9618,7 +9620,7 @@
             var theItemID = quickSelectBar[barSlot];
             var degradeAmount = degradeByAmount(theItemID);
 
-            quickSelectBarSpecs[barSlot] -= degradeAmount;
+            quickSelectBarSpecs[barSlot] -= degradeAmount; // CHQ: violation of clean function rules, mutating a global variable
           }
 
           world[a][b] = 0;
