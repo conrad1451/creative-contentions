@@ -1458,6 +1458,7 @@
 
       var NBTtag = null;
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var setTag = function (itemId) {
         if (itemId === 0 || NBTtag === "") {
           NBTtag = null;
@@ -1474,6 +1475,7 @@
         }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var displayMouseCoords = function () {
         var xCord = mouseX.toString();
         var yCord = mouseY.toString();
@@ -1771,6 +1773,7 @@
 
       var msgTimers = [];
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var broadcast = function (msg) {
         append(messages, msg);
         append(msgTimers, 150);
@@ -1792,6 +1795,7 @@
       var craftedItemQty = [];
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var woodenPlankRecipe = function (i) {
         recipes[i][0] = [7, 0, 0, 0, 0, 0, 0, 0, 0];
         recipes[i][1] = [0, 7, 0, 0, 0, 0, 0, 0, 0];
@@ -1804,6 +1808,7 @@
         recipes[i][8] = [0, 0, 0, 0, 0, 0, 0, 0, 7];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var fireRecipe = function (i) {
         recipes[i][0] = [302, 0, 0, 0, 302, 0, 0, 0, 0];
         recipes[i][1] = [0, 302, 0, 0, 0, 302, 0, 0, 0];
@@ -1811,6 +1816,7 @@
         recipes[i][3] = [0, 0, 0, 302, 0, 0, 0, 302, 0];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var craftingTableRecipe = function (i) {
         recipes[i][0] = [5, 5, 0, 5, 5, 0, 0, 0, 0];
         recipes[i][1] = [0, 5, 5, 0, 5, 5, 0, 0, 0];
@@ -1818,11 +1824,13 @@
         recipes[i][3] = [0, 0, 0, 0, 5, 5, 0, 5, 5];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var doorRecipe = function (i) {
         recipes[i][0] = [5, 5, 0, 5, 5, 0, 5, 5, 0];
         recipes[i][1] = [0, 5, 5, 0, 5, 5, 0, 5, 5];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var stickRecipe = function (i) {
         recipes[i][0] = [5, 0, 0, 5, 0, 0, 0, 0, 0];
         recipes[i][1] = [0, 5, 0, 0, 5, 0, 0, 0, 0];
@@ -1832,6 +1840,7 @@
         recipes[i][5] = [0, 0, 0, 0, 0, 5, 0, 0, 5];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var ironIngotRecipe = function (i) {
         recipes[i][0] = [37, 0, 0, 0, 0, 0, 0, 0, 0];
         recipes[i][1] = [0, 37, 0, 0, 0, 0, 0, 0, 0];
@@ -1844,6 +1853,7 @@
         recipes[i][8] = [0, 0, 0, 0, 0, 0, 0, 0, 37];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var goldIngotRecipe = function (i) {
         recipes[i][0] = [38, 0, 0, 0, 0, 0, 0, 0, 0];
         recipes[i][1] = [0, 38, 0, 0, 0, 0, 0, 0, 0];
@@ -1856,6 +1866,7 @@
         recipes[i][8] = [0, 0, 0, 0, 0, 0, 0, 0, 38];
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var diamondzRecipe = function (i) {
         recipes[i][0] = [39, 0, 0, 0, 0, 0, 0, 0, 0];
         recipes[i][1] = [0, 39, 0, 0, 0, 0, 0, 0, 0];
@@ -1871,6 +1882,7 @@
 
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var loadRecipies = function () {
         // Conrad: each iteration, jumps to loading the corresponding 
         //         recipe for the item. Therefore, loadRecipies is 
@@ -2731,6 +2743,7 @@
 
       var world = newWorld;
 
+      // CHQ: function line count: NUM (1477-1462+1)
       // Conrad: finds the minimum of two values
       var minVal = function (val1, val2) {
         if (val1 < val2) {
@@ -2741,6 +2754,7 @@
         }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       /*
       // Conrad: determines if a value exists within a certain range. 
       // val: the value 
@@ -2770,6 +2784,7 @@
         }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       /*
       // Conrad: determines if a point lies within a rectangular bounds (inclusive bounds)
       // val: the value 
@@ -2786,6 +2801,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var putInMatchingBarSlot = function (itemID, l, amount) {
         var spaceLeftInSlot = maxStacks[itemID] - quickSelectBarQty[l];
         var changeAmount = minVal(amount, spaceLeftInSlot);
@@ -2796,6 +2812,7 @@
         return changeAmount;
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var putInEmptyBarSlot = function (itemID, itemIndex, amount) {
         var spaceLeftInSlot = maxStacks[itemID] - quickSelectBarQty[itemIndex];
         var changeAmount = minVal(amount, spaceLeftInSlot);
@@ -2807,6 +2824,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var putInMatchingInvSlot = function (itemID, i, j, amount) {
         var spaceLeftInSlot = maxStacks[itemID] - invContentQty[j][i];
         var changeAmount = minVal(amount, spaceLeftInSlot);
@@ -2827,6 +2845,7 @@
         return changeAmount;
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var putInEmptyInvSlot = function (itemID, indexI, indexJ, amount) {
         var spaceLeftInSlot = maxStacks[itemID] - invContentQty[indexJ][indexI];
         var changeAmount = minVal(amount, spaceLeftInSlot);
@@ -2838,6 +2857,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       // Conrad: stores items in inventory and returns the quantity of items stored
       var amountPlacedInBar = function (itemID, amount) {
         var amountStored = 0;
@@ -2871,6 +2891,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       // Conrad: stores items in inventory and returns the quantity of items stored
       var amountPlacedInInventory = function (itemID, amount) {
         var indexJ;
@@ -2912,6 +2933,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var getItem = function (itemID, amount) {
         var cntOfStoredItems = amountPlacedInBar(itemID, amount);
 
@@ -2919,6 +2941,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var spawnMobs = function (x, y, type) {
         append(mobs.type, type);
         append(mobs.x, x);
@@ -2958,6 +2981,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var generateWater = function (d) {
         world[d][world[0].length - 5] = 11;
         world[d][world[0].length - 4] = 11;
@@ -2969,6 +2993,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var setToBlockType = function (d, blockID) {
         world[d - 2][world[0].length - 1] = blockID;
         world[d - 2][world[0].length] = blockID;
@@ -2996,6 +3021,7 @@
         world[d + 2][world[0].length + 1] = blockID;
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var generateOres = function (d) {
         if (round(random(0, 3))) { }
         else {
@@ -3222,6 +3248,7 @@
         }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var generateTrees = function (d) {
         world[d][world[0].length] = 7;
 
@@ -3250,12 +3277,14 @@
         world[d - 5][world[0].length + 1] = 9;
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var generateCactus = function (d) {
         world[d][world[0].length] = 31;
         world[d - 1][world[0].length] = 31;
         world[d - 2][world[0].length] = 31;
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var randomItemGenerator = function (hurr, durr) {
         var item;
         var itemStacks;
@@ -3316,6 +3345,7 @@
         if (itemDurabilities[item]) { specs[hurr][durr][2][g][h] = itemDurabilities[item]; }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var dungeonGenerator = function (d) {
         var l = world[0].length;
 
@@ -3392,6 +3422,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       //This function makes the world truly infinite
       var genWorld = function () {
         if (round(random(0, 10))) { }
@@ -3426,6 +3457,7 @@
         }
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       // CHQ: This violates rules for clean functions 
       var spawnEntity = function (x, y, t, t2) {
         append(entity.x, x);
@@ -3440,6 +3472,7 @@
       // ----------------Conrad: SECTION 1: VARIABLES -----------------//
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawTNTIcon = function (g, h) {
         fill(255, 0, 0);
         rect(g, h, 20, 20);
@@ -3448,6 +3481,7 @@
         rect(g, h + 5, 20, 10);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase13 = function (g, h) {
         fill(120, 120, 120);
         ellipse(g + 10, h + 19, 15, 8);
@@ -3458,6 +3492,7 @@
         ellipse(g + 10, h + 3, 12, 6);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase11 = function (g, h) {
         fill(219, 64, 219);
         ellipse(g + 10, h + 19, 15, 8);
@@ -3468,6 +3503,7 @@
         ellipse(g + 10, h + 3, 12, 6);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase22 = function (g, h) {
         fill(122, 122, 122);
         rect(g, h, 20, 20);
@@ -3480,6 +3516,7 @@
         ellipse(g + 14, h + 15, 9, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase23 = function (g, h) {
         fill(122, 122, 122);
         rect(g, h, 20, 20);
@@ -3491,21 +3528,25 @@
         ellipse(g + 14, h + 15, 9, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawNetherrackIcon = function (g, h) {
         fill(99, 21, 2);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase20 = function (g, h) {
         fill(255, 230, 166);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase21 = function (g, h) {
         fill(136, 127, 140);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase16 = function (g, h) {
         fill(107, 50, 0);
         rect(g + 9, h + 12, 2, 8);
@@ -3515,6 +3556,7 @@
         rect(g + 7, h + 5, 5, 10);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase24 = function (g, h) {
         fill(122, 122, 122);
         rect(g, h, 20, 20);
@@ -3526,6 +3568,7 @@
         ellipse(g + 14, h + 15, 9, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawLapisLazuliIcon = function (g, h) {
         fill(122, 122, 122);
         rect(g, h, 20, 20);
@@ -3537,6 +3580,7 @@
         ellipse(g + 14, h + 15, 9, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDiamondOreIcon = function (g, h) {
         fill(122, 122, 122);
         rect(g, h, 20, 20);
@@ -3548,6 +3592,7 @@
         ellipse(g + 14, h + 15, 9, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawCraftingTableIcon = function (g, h) {
         fill(201, 153, 80);
         rect(g, h, 20, 20);
@@ -3567,6 +3612,7 @@
         noStroke();
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawWoodenDoorIcon = function (g, h) {
         fill(201, 153, 80);
         stroke(120, 83, 44);
@@ -3579,6 +3625,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawLadderIcon = function (g, h) {
         stroke(120, 83, 44);
         strokeWeight(3);
@@ -3590,6 +3637,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase31 = function (g, h) {
         stroke(0, 0, 0);
         line(g + 1, h + 2, g + 18, h + 2);
@@ -3601,6 +3649,7 @@
         rect(g + 2, h, 16, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawFurnaceIcon = function (g, h) {
         strokeWeight(2);
         stroke(71, 71, 71);
@@ -3623,6 +3672,7 @@
         noStroke();
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase34 = function (g, h) {
         fill(184, 133, 57);
         stroke(120, 83, 44);
@@ -3636,6 +3686,7 @@
         rect(g + 8, h + 3, 3, 6);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawMossStoneIcon = function (g, h) {
         fill(122, 122, 122);
         strokeWeight(2);
@@ -3652,6 +3703,7 @@
         triangle(g + 2, h + 13, g + 7, h + 13, g + 4, h + 19);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawMonsterSpawnerIcon = function (g, h) {
         stroke(4, 68, 77);
         noFill();
@@ -3662,36 +3714,42 @@
         line(g, h + 15, g + 18, h + 15);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronBlockIcon = function (g, h) {
         fill(230);
         stroke(140);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawGoldBlockIcon = function (g, h) {
         fill(255, 234, 0);
         stroke(209, 157, 0);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase39 = function (g, h) {
         stroke(0, 148, 148);
         fill(0, 255, 255);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase300 = function (g, h) {
         stroke(120, 83, 44);
         strokeWeight(3);
         line(g + 1, h + 19, g + 19, h + 1);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawCoalIcon = function (g, h) {
         stroke(0, 0, 0);
         fill(59, 54, 59);
         ellipse(g + 10, h + 10, 15, 17);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronIngotIcon = function (g, h) {
         stroke(163, 163, 163);
         fill(209, 209, 209);
@@ -3699,6 +3757,7 @@
         quad(g, h + 9, g + 5, h + 6, g + 15, h + 6, g + 19, h + 9);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase303 = function (g, h) {
         stroke(189, 151, 0);
         fill(255, 200, 0);
@@ -3706,6 +3765,7 @@
         quad(g, h + 9, g + 5, h + 6, g + 15, h + 6, g + 19, h + 9);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCase304 = function (g, h) {
         stroke(0, 0, 117);
 
@@ -3714,11 +3774,13 @@
         ellipse(g + 10, h + 10, 15, 17);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawFlintIcon = function (g, h) {
         fill(89, 89, 89);
         triangle(g + 1, h + 20, g + 20, h + 1, g + 20, h + 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlock307Icon = function (g, h) {
         fill(207, 147, 44);
         stroke(120, 83, 44);
@@ -3732,6 +3794,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlock308Icon = function (g, h) {
         fill(150);
         stroke(120);
@@ -3745,6 +3808,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlock309Icon = function (g, h) {
         fill(230);
         stroke(140);
@@ -3758,6 +3822,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlock310Icon = function (g, h) {
         fill(255, 234, 0);
         stroke(209, 157, 0);
@@ -3771,6 +3836,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDiamondzPickaxeIcon = function (g, h) {
         stroke(0, 148, 148);
         fill(0, 255, 255);
@@ -3784,6 +3850,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBronzeSwordIcon = function (g, h) {
         fill(207, 147, 44);
         stroke(120, 83, 44);
@@ -3799,6 +3866,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawStoneSwordIcon = function (g, h) {
         fill(150);
         stroke(120);
@@ -3814,6 +3882,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronSwordIcon = function (g, h) {
         fill(230);
         stroke(140);
@@ -3829,6 +3898,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawGoldSwordIcon = function (g, h) {
         fill(255, 234, 0);
         stroke(209, 157, 0);
@@ -3844,6 +3914,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDiamondzSwordIcon = function (g, h) {
         stroke(0, 148, 148);
         fill(0, 255, 255);
@@ -3859,6 +3930,7 @@
         strokeWeight(2);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawRawPorkChopIcon = function (g, h) {
         noFill();
         stroke(191, 103, 103);
@@ -3869,12 +3941,14 @@
         bezier(g + 3, h + 15, g + 8, h + 13, g + 13, h + 8, g + 15, h + 3);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawGunpowderIcon = function (g, h) {
         stroke(100);
         fill(150);
         triangle(g + 10, h + 5, g + 20, h + 15, g, h + 15);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawCookedPorkChopIcon = function (g, h) {
         noFill();
         stroke(148, 113, 61);
@@ -3885,6 +3959,7 @@
         bezier(g + 3, h + 15, g + 8, h + 13, g + 13, h + 8, g + 15, h + 3);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlock9Icon = function (g, h) {
         fill(255, 191, 0);
         rect(g, h, 5, 5);
@@ -3897,11 +3972,13 @@
         rect(g + 15, h + 15, 5, 5);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawObsidianIcon = function (g, h) {
         fill(57, 0, 122);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDiamondzIcon = function (g, h) {
         stroke(0, 148, 148);
         fill(0, 255, 255);
@@ -3910,15 +3987,18 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCaseA = function (g, h) {
 
       };
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBlockCaseB = function (g, h) {
 
       };
 
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawLeatherIcon = function (g, h) {
         fill(125, 75, 0);
         ellipse(g + 10, h + 10, 15, 20);
@@ -3934,6 +4014,7 @@
         triangle(g + 3, h + 16.5, g + 10, h + 17, g + 5, h + 5);
         triangle(g + 17, h + 16.5, g + 10, h + 17, g + 15, h + 5);
       };
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawEmptyMilkBucket = function (g, h) {
         fill(120, 120, 120);
 
@@ -3945,6 +4026,7 @@
         ellipse(g + 10, h + 3, 12, 6);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawFullMilkBucket = function (g, h) {
         fill(120, 120, 120);
 
@@ -3958,6 +4040,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawFlintAndSteelIcon = function (g, h) {
         fill(89, 89, 89);
         triangle(g + 8, h + 20, g + 20, h + 8, g + 20, h + 20);
@@ -3969,6 +4052,7 @@
         ellipse(g + 8, h + 6, 7, 7);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawCobbleStoneBlockIcon = function (g, h) {
         fill(161, 161, 161);
         strokeWeight(2);
@@ -3982,6 +4066,7 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawBrickBlockIcon = function (g, h) {
         fill(230, 87, 21);
         rect(g, h, 20, 20);
@@ -4002,6 +4087,7 @@
         noStroke();
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawWoodenPlankBlockIcon = function (g, h) {
         fill(179, 126, 46);
         rect(g, h, 20, 20);
@@ -4015,6 +4101,7 @@
         noStroke();
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawLogBlockIcon = function (g, h) {
         fill(214, 120, 39);
         rect(g, h, 20, 20);
@@ -4029,17 +4116,20 @@
       };
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawGrassBlockIcon = function (g, h) {
         fill(209, 87, 0);
         rect(g, h, 20, 20);
         rect(g, h, 20, 5);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDirtBlockIcon = function (g, h) {
         fill(140, 58, 0);
         rect(g, h, 20, 20);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawStoneBlockIcon = function (g, h) {
         fill(212, 212, 212);
         rect(g, h, 20, 20);
@@ -4048,6 +4138,7 @@
 
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronHelmetIcon = function (g, h) {
         fill(230);
         stroke(140);
@@ -4058,6 +4149,7 @@
         rect(g + 5, h + 8, 11, 15, 5);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronShieldIcon = function (g, h) {
         fill(230);
         stroke(140);
@@ -4066,6 +4158,7 @@
         rect(g, h, 20, 20, 10);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronPantsIcon = function (g, h) {
         fill(230);
         stroke(140);
@@ -4075,6 +4168,7 @@
         rect(g, h, 20, 10, 10);
       };
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawIronShoesIcon = function (g, h) {
         fill(230);
         stroke(140);
@@ -4085,6 +4179,7 @@
 
 
 
+      // CHQ: function line count: NUM (1477-1462+1)
       var drawDiamondzHelmetIcon = function (g, h) {
         stroke(0, 148, 148);
         fill(0, 255, 255);
@@ -9668,12 +9763,13 @@
 
 
       var breakAndTakeBlock = function (thatRightClick) {
-        a = (mouseY / 40 + 0.5 - scrollY / 40).toFixed(0, 0) - 1;
-        b = (mouseX / 40 + 0.5 - scrollX / 40).toFixed(0, 0) - 1;
+        a = (mouseY / 40 + 0.5 - scrollY / 40).toFixed(0, 0) - 1; // CHQ: violation of clean function rules, accessing a global variable
+        b = (mouseX / 40 + 0.5 - scrollX / 40).toFixed(0, 0) - 1; // CHQ: violation of clean function rules, accessing a global variable
 
-        var blockNotAir = quickSelectBar[barSlot] !== 0;
-        var ofCertainBlocks = quickSelectBar[barSlot] < 300;
+        var blockNotAir = quickSelectBar[barSlot] !== 0; // CHQ: violation of clean function rules, accessing a global variable
+        var ofCertainBlocks = quickSelectBar[barSlot] < 300;  // CHQ: violation of clean function rules, accessing a global variable
 
+         // CHQ: violation of clean function rules, world is a global variable being accessed
         if (mousePressed && thatRightClick && ofCertainBlocks && blockNotAir) {
           var isAir = world[a][b] === 0;
           var isStandingWater = world[a][b] === 11;
@@ -9695,6 +9791,7 @@
 
             if (isChest) { createNewChest(); }
 
+            // CHQ: would this be better named as update qty and specs?
             reduceQtyAndSpecs();
 
             var isDoor = world[a][b] === 28;
