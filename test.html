@@ -2865,6 +2865,10 @@
         var itemIndex = 0;
         var l = 0;
         var foundEmptySlot = false;
+
+        // CHQ: the while loop fills up the slot in the bar until full. If full, 
+        // the loop moves on to the next open slot until all of the items
+        // are placed in the bar or the bar is full
         while (l < 9 && amount > 0) {
           var emptySlot = (quickSelectBarQty[l] === 0);
           var slotHoldsTargetItem = (quickSelectBar[l] === itemID);
@@ -8326,8 +8330,8 @@
 
 
 
-      var injuredByFall = function (theDecision) {
-        if (theDecision) {
+      var injuredByFall = function (touchingAirHazardOrSappling) {
+        if (touchingAirHazardOrSappling) {
           if (fallTix > 10) {
             blocksFallen++; // CHQ: violation of clean function rules, mutating a global variable
           }
@@ -9942,12 +9946,12 @@
         posA2 = ((posY - 30) / 40 - (posY - 30) / 20).toFixed(0, 0);
         posB2 = ((posX + 30) / 40 - (posX + 30) / 20 + 5).toFixed(0, 0);
 
-        var decisionToDoItNow = shouldDoItNow();
+        var atAirHazardOrSappling = shouldDoItNow();
 
-        if (decisionToDoItNow) { posY -= fall - jump; }
+        if (atAirHazardOrSappling) { posY -= fall - jump; }
         else { jump = 20; }
 
-        injuredByFall(decisionToDoItNow);
+        injuredByFall(atAirHazardOrSappling);
 
         //to prevent infinity health hax
         if (health > MAX_HEALTH) { health = MAX_HEALTH; }
