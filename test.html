@@ -6827,7 +6827,7 @@
 
         var loadWorldButton = inRectangularBounds(mouseX, lb_x2, ub_x2, mouseY, lb_y2, ub_y2);
 
-        if (mousePressed) {
+        if (mouseIsPressed) {
           if (backButton) {
             loadingWorld = false;
           }
@@ -6878,7 +6878,7 @@
 
         var inLoadWorldButtonArea = inRectangularBounds(mouseX, lb_x2, ub_x2, mouseY, lb_y2, ub_y2);
 
-        if (mousePressed) {
+        if (mouseIsPressed) {
           if (inLoadWorldButtonArea && !loadingWorld) {
             loadingWorld = true;
             // loadSavedWorld();
@@ -7156,7 +7156,7 @@
 
         quickSelectBarQty[barSlot]--; // CHQ: violation of clean function rules, mutating a global variable
 
-        mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+        mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
         keys[SHIFT] = false; // CHQ: violation of clean function rules, mutating a global variable
       };
 
@@ -7290,7 +7290,7 @@
 
           world[a][b] = 0; // CHQ: violation of clean function rules, mutating a global variable
 
-          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+          mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
       };
 
@@ -7788,7 +7788,7 @@
         armorSlots[a * 2 + b] = oldBlock;
         armorSpecs[a * 2 + b] = oldSpecs;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
 
@@ -7801,14 +7801,14 @@
         armorSlots[a * 2 + b] = 0;
         armorSpecs[a * 2 + b] = 0;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
 
       var wearingArmor = function (a, b) {
         setTag(armorSlots[a * 2 + b]);
 
-        if (mousePressed && a >= 0 && a <= 1 && b >= 0 && b <= 1) {
+        if (mouseIsPressed && a >= 0 && a <= 1 && b >= 0 && b <= 1) {
           var blockIsArmor = (holdingBlock >= 320 && holdingBlock <= 335);
 
           if (holdingBlock === 0) {
@@ -7850,13 +7850,13 @@
           craftingGrid = [0, 0, 0, 0, 0, 0, 0, 0, 0];
         }
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
       var grabCraftedItemsLargePlatform = function () {
         setTag(craftedItem);
 
-        if (mousePressed) {
+        if (mouseIsPressed) {
           if (keys[SHIFT]) {
             autoGrab();
           }
@@ -7869,7 +7869,7 @@
       var grabCraftedItemsSmallPlatform = function () {
         setTag(craftedItem);
 
-        if (mousePressed && craftedItem !== 0) {
+        if (mouseIsPressed && craftedItem !== 0) {
           if (keys[SHIFT]) {
             autoGrab();
           }
@@ -7907,7 +7907,7 @@
 
         keyCode = 0;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
       var handInventoryItemSwap = function (a, b) {
@@ -7944,14 +7944,14 @@
         if (a < 7 && b < 5 && a > 0 && b > 0) {
           setTag(invContents[a - 1][b - 1]);
 
-          if (mousePressed) {
+          if (mouseIsPressed) {
             takeFromInventory(a, b);
 
             if (keyCodeTriggered) {
               keyCode = 0;
             }
 
-            mousePressed = false;
+            mouseIsPressed = false;
           }
         }
       };
@@ -7980,7 +7980,7 @@
         targetChest[1][a][b] = oldQty;
         targetChest[2][a][b] = oldSpec;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
 
@@ -7991,7 +7991,7 @@
         if (b > 0 && b <= 9) {
           setTag(quickSelectBar[b - 1]);
 
-          if (mousePressed) {
+          if (mouseIsPressed) {
             takeFromQuickSelectBar(b);
           }
         }
@@ -8015,7 +8015,7 @@
             if (a < 6 && b < 4 && a >= 0 && b >= 0) {
               setTag(targetChest[0][a][b]);
 
-              if (mousePressed) {
+              if (mouseIsPressed) {
                 takeFromChest(targetChest, a, b);
               }
             }
@@ -8025,7 +8025,7 @@
           interactWithQuickSelectBar();
         }
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
 
@@ -8056,7 +8056,7 @@
           takeItemsOffCraftingTable(a, b);
         }
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
 
@@ -8093,7 +8093,7 @@
             if (mouseY < 200 && mouseX > 210 && b < 2 && b >= 0 && a < 2 && a >= 0) {
               setTag(craftingSquares[a][b]);
 
-              if (mousePressed) {
+              if (mouseIsPressed) {
                 interactWithCraftingPlatform(craftingSquares, a, b);
               }
             }
@@ -8139,7 +8139,7 @@
             if (mouseY < 200 && mouseX > 210 && b < 3 && b >= 0 && a < 3 && a >= 0) {
               setTag(craftingSquares[a][b]);
 
-              if (mousePressed) {
+              if (mouseIsPressed) {
                 interactWithCraftingPlatform(craftingSquares, a, b);
               }
             }
@@ -8171,7 +8171,7 @@
           holdingSpecs = itemDurabilities[smeltedItem];
         }
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
       var furnaceFuelArea = function (smeltedItem, smeltedStacks, fuel, fuelStacks, fuelSpecs) {
@@ -8187,7 +8187,7 @@
         fuelStacks = oldQty;
         fuelSpecs = oldSpec;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
       var furnaceTopAreaFunctioning = function (smeltedItem, smeltedStacks, fuel, item, itemStacks, itemSpecs) {
@@ -8203,7 +8203,7 @@
         itemStacks = oldQty;
         itemSpecs = oldSpec;
 
-        mousePressed = false;
+        mouseIsPressed = false;
       };
 
       var interactWithFurnace = function () {
@@ -8256,15 +8256,15 @@
         // 		collected, middle area where the fuel goes, and
         //               bottom area where the items to be smelted goes
 
-        if (mouseInFurnaceBottomArea && mousePressed) {
+        if (mouseInFurnaceBottomArea && mouseIsPressed) {
           furnaceSmeltedItemCollection(smeltedItem, smeltedStacks, fuel);
         }
 
-        if (mouseInFurnaceMiddleArea && mousePressed) {
+        if (mouseInFurnaceMiddleArea && mouseIsPressed) {
           furnaceFuelArea(smeltedItem, smeltedStacks, fuel, fuelStacks, fuelSpecs);
         }
 
-        if (mouseInFurnaceTopArea && mousePressed) {
+        if (mouseInFurnaceTopArea && mouseIsPressed) {
           furnaceTopAreaFunctioning(smeltedItem, smeltedStacks, fuel, item, itemStacks, itemSpecs);
         }
 
@@ -8389,7 +8389,7 @@
         else {
           legPos = 0;
 
-          if (!mousePressed) {
+          if (!mouseIsPressed) {
             armPos = 0;
           }
         }
@@ -8595,7 +8595,7 @@
 
         noStroke();
 
-        if (mousePressed && mouseButton === LEFT && armTimer <= 0) {
+        if (mouseIsPressed && mouseButton === LEFT && armTimer <= 0) {
           armTimer = 5;
         }
 
@@ -9264,7 +9264,7 @@
               mobs.y[s] += 10;
             }
 
-            if (dist(mobB, mobA, b, a) === 0 && mousePressed && rightClick) {
+            if (dist(mobB, mobA, b, a) === 0 && mouseIsPressed && rightClick) {
               if (quickSelectBarQty[barSlot] === 1) {
                 quickSelectBar[barSlot] = 338;
               }
@@ -9273,7 +9273,7 @@
                 getItem(338, 1);
               }
 
-              mousePressed = false;
+              mouseIsPressed = false;
             }
 
             break;
@@ -9298,7 +9298,7 @@
             break;
         }
 
-        if (dist(mobB, mobA, b, a) === 0 && mousePressed && mouseButton === LEFT) {
+        if (dist(mobB, mobA, b, a) === 0 && mouseIsPressed && mouseButton === LEFT) {
           mobs.health[s]--;
 
           if (mobB < posB) {
@@ -9310,7 +9310,7 @@
 
           mobs.y[s] -= 10;
 
-          mousePressed = false;
+          mouseIsPressed = false;
 
           var isASword = quickSelectBar[barSlot] > 311 && quickSelectBar[barSlot] < 317;
 
@@ -9396,13 +9396,13 @@
         if (furnaceClicked) {
           isSmelting = true; // CHQ: violation of clean function rules, mutating a global variable
           blockTargeted = [a, b]; // CHQ: violation of clean function rules, mutating a global variable
-          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+          mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (chestClicked) {
           onChest = true; // CHQ: violation of clean function rules, mutating a global variable
           blockTargeted = [a, b]; // CHQ: violation of clean function rules, mutating a global variable
-          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+          mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (craftingTableClicked) {
@@ -9426,7 +9426,7 @@
 
         if (swordSelected && gameHacks) {
           spawnMobs(b * 40, a * 40, 0);
-          mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+          mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
         }
 
         if (health < MAX_HEALTH) {
@@ -9725,7 +9725,7 @@
             selectedWater = false;
             selectedLava = false;
 
-            mousePressed = false; // CHQ: violation of clean function rules, mutating a global variable
+            mouseIsPressed = false; // CHQ: violation of clean function rules, mutating a global variable
           }
           else {
             // Conrad: Reduces amount of item in inventory
@@ -9749,7 +9749,7 @@
         var ofCertainBlocks = quickSelectBar[barSlot] < 300;  // CHQ: violation of clean function rules, accessing a global variable
 
          // CHQ: violation of clean function rules, world is a global variable being accessed
-        if (mousePressed && thatRightClick && ofCertainBlocks && blockNotAir) {
+        if (mouseIsPressed && thatRightClick && ofCertainBlocks && blockNotAir) {
           var isAir = world[a][b] === 0;
           var isStandingWater = world[a][b] === 11;
           var isFlowingWater = world[a][b] === 12;
@@ -9789,7 +9789,7 @@
           }
         }
 
-        if (mousePressed && thatRightClick) { rightClickActions(thatRightClick); }
+        if (mouseIsPressed && thatRightClick) { rightClickActions(thatRightClick); }
       };
 
 
@@ -9957,7 +9957,7 @@
 
         var newOxygen = characterDrowning(inWater, oxygen);
         // split up the line so it is more sound coding
-        oxyen = newOxygen;
+        oxygen = newOxygen;
 
         for (var L = 0; L < armor / 2; L++) { image(shield, 400 - L * 16 - 40, 312, 16, 24); }
 
@@ -10058,9 +10058,9 @@
         if (keyCode > 48 && keyCode < 58 && !chatOpened) { barSlot = keyCode - 49; }
 
         //Now to make it so we can break blocks.
-        if (!mousePressed) { blockStrength = null; }
+        if (!mouseIsPressed) { blockStrength = null; }
 
-        if (mousePressed && !inventory && !news) {
+        if (mouseIsPressed && !inventory && !news) {
           if (mouseButton === LEFT && world[a][b] !== 18) {
             if (world[a][b] < 10 || world[a][b] > 14) { breakBlocks(); }
           }
