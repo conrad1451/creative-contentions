@@ -2228,7 +2228,9 @@
 
       //                  V V CHANGE YOUR SKIN V V
 
-      // var skin = getImage("./imgs/cute/CharacterBoy.png");
+    //   var skin = getImage("./imgs/cute/CharacterBoy.png");
+
+      var skin = getImage("cute/CharacterBoy");
 
       var blocksFallen = 0;
       var fallTix = 0;
@@ -2257,7 +2259,8 @@
       var MAX_HEALTH = 20;//200;
       var health = 20;//200;
 
-      // var heart = getImage("./imgs/cute/Heart.png");
+    //   var heart = getImage("./imgs/cute/Heart.png");
+      var heart = getImage("cute/Heart");
       var heartsShowing = false;
 
       var shake = 2;
@@ -2270,7 +2273,8 @@
       var drownCount = 0;
       var oxygen = 10;
 
-      // var shield = getImage("./imgs/cute/RampSouth.png");
+    //   var shield = getImage("./imgs/cute/RampSouth.png");
+      var shield = getImage("cute/RampSouth");
       var shieldsShowing = false;
       var shieldsShowingCount = 1000;
       var isDead = false;
@@ -6539,7 +6543,7 @@
                 noStroke();
 
                 // FIXME: commenting out images for now, will fix later
-                // image(getImage("avatars/marcimus"), x * 40 + scrollX + 5, y * 40 + scrollY + 5, 30, 30);
+                image(getImage("avatars/marcimus"), x * 40 + scrollX + 5, y * 40 + scrollY + 5, 30, 30);
 
                 drawMonsterSpawner(x, y, scrollX, scrollY);
 
