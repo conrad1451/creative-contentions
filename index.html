@@ -1,47 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Refactored Game</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        #app {
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            /* You might want to set dimensions or other styles for your game container */
-        }
-        h1, h2 {
-            color: #555;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        p {
-            line-height: 1.6;
-        }
-    </style>
+  <title>Light Green Circle</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
 </head>
 <body>
-    <div id="app">
-        </div>
-
-    <h1>Want to compare game performance with the original? The original can be found here:</h1>
-    <p><a href="https://www.khanacademy.org/computer-programming/creative-mode-redone/5654575646769152">Original Game</a></p>
-<!-- 
-    <h2><a href="https://www.khanacademy.org/computer-programming/creative-contentions-13/4728579302801408">Creative Contentions 1.3</a></h2>
-    <script src="https://www.khanacademy.org/computer-programming/creative-contentions-13/4728579302801408/embed.js?editor=yes&buttons=yes&author=yes&embed=yes"></script>
-    <p>Made using: <a href="http://www.khanacademy.org/computer-programming">Khan Academy Computer Science</a></p> -->
-
-    <script src="gamePlay.js"></script> </body>
+  <canvas id="gameCanvas"></canvas>
+  <script src="game.js"></script>
+</body>
 </html>
