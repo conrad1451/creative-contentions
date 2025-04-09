@@ -145,10 +145,10 @@ const character = {
       }
       console.log("Best Armor Hack triggered! Armor types updated.");
     } else {
-      this.armorType.helmetType = "";
-      this.armorType.shieldType = "";
-      this.armorType.pantsType = "";
-      this.armorType.shoesType = "";
+      this.armorType.helmetType = 332; 
+      this.armorType.shieldType = 321; 
+      this.armorType.pantsType = 330; 
+      this.armorType.shoesType = 335; 
       console.log("Best Armor Hack is inactive. Armor types reset.");
     }
   },
@@ -166,6 +166,7 @@ const character = {
     return `Helmet Type: ${this.armorType.helmetType}, Shield Type: ${this.armorType.shieldType}, Pants Type: ${this.armorType.pantsType}, Shoes Type: ${this.armorType.shoesType}`;
   }
 };
+
 
 // Example of how to call normalMode and specialMode within your game loop:
 function gameLoop() {
