@@ -24,6 +24,8 @@ const gameState = {
   netherWorld: netherWorldMap,
   currentWorld: overWorldMap,
   isOverWorld: true,
+  gamePlayMode: "normalMode", // Added gamePlayMode property
+  
   toggleWorld: function() {
     if (this.isOverWorld) {
       this.currentWorld = this.netherWorld;
@@ -34,6 +36,22 @@ const gameState = {
       this.isOverWorld = true;
       console.log("Teleported to the Overworld.");
     }
+  }
+  setGamePlayMode: function(mode) {
+    if (mode === "normalMode" || mode === "specialMode") {
+      this.gamePlayMode = mode;
+      console.log(`Game mode set to: ${this.gamePlayMode}`);
+    } else {
+      console.warn(`Invalid game mode: ${mode}. Please use 'normalMode' or 'specialMode'.`);
+    }
+  },
+
+  isNormalMode: function() {
+    return this.gamePlayMode === "normalMode";
+  },
+
+  isSpecialMode: function() {
+    return this.gamePlayMode === "specialMode";
   }
 };
 
