@@ -138,3 +138,37 @@ character.updateArmorTypes();
 console.log("\nBest Armor Hack Deactivated!");
 console.log("Updated Armor Details:", character.getArmorDetails());
 console.log("Effective Armor:", character.getEffectiveArmor());
+
+// Example of setting and checking the gamePlayMode:
+console.log("Initial Game Mode:", gameState.gamePlayMode);
+
+gameState.setGamePlayMode("specialMode");
+console.log("Current Game Mode:", gameState.gamePlayMode);
+
+console.log("Is Normal Mode?", gameState.isNormalMode());
+console.log("Is Special Mode?", gameState.isSpecialMode());
+
+gameState.setGamePlayMode("invalidMode"); // Example of setting an invalid mode
+console.log("Is Normal Mode?", gameState.isNormalMode());
+console.log("Is Special Mode?", gameState.isSpecialMode());
+
+gameState.setGamePlayMode("normalMode");
+
+
+// Inside one of your game logic functions:
+function someGameLogic() {
+  if (gameState.isNormalMode()) {
+    // Execute normal game logic
+    console.log("Game is in normal mode.");
+    // ...
+  } else if (gameState.isSpecialMode()) {
+    // Execute special game logic
+    console.log("Game is in special mode!");
+    // ... different behavior ...
+  }
+}
+
+someGameLogic(); // Call the function
+
+
+
