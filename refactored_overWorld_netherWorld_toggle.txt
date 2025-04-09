@@ -11,8 +11,17 @@ const overWorldMap = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ];
 
-const netherWorldMap = [
+const netherWorldMap1 = [
   ["stone", "stone", "stone", "stone", "stone"],
+  ["stone", "fire", "lava", "fire", "stone"],
+  ["stone", "lava", "obsidian", "lava", "stone"],
+  ["stone", "fire", "lava", "fire", "stone"],
+  ["stone", "stone", "stone", "stone", "stone"]
+];
+
+
+const netherWorldMap2 = [
+  ["stone", "stone", "fire", "stone", "stone"],
   ["stone", "fire", "lava", "fire", "stone"],
   ["stone", "lava", "obsidian", "lava", "stone"],
   ["stone", "fire", "lava", "fire", "stone"],
