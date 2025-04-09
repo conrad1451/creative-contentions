@@ -1,0 +1,47 @@
+const overWorldMap = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 1, 2, 2, 2, 2, 2, 2, 1, 0],
+  [0, 1, 2, 3, 3, 3, 3, 2, 1, 0],
+  [0, 1, 2, 3, 4, 4, 3, 2, 1, 0],
+  [0, 1, 2, 3, 4, 4, 3, 2, 1, 0],
+  [0, 1, 2, 3, 3, 3, 3, 2, 1, 0],
+  [0, 1, 2, 2, 2, 2, 2, 2, 1, 0],
+  [0, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+];
+
+const netherWorldMap = [
+  ["stone", "stone", "stone", "stone", "stone"],
+  ["stone", "fire", "lava", "fire", "stone"],
+  ["stone", "lava", "obsidian", "lava", "stone"],
+  ["stone", "fire", "lava", "fire", "stone"],
+  ["stone", "stone", "stone", "stone", "stone"]
+];
+
+const gameState = {
+  overWorld: overWorldMap,
+  netherWorld: netherWorldMap,
+  currentWorld: overWorldMap, // Initialize with the overWorld
+  isOverWorld: true, // Keep track of the current world type
+
+  toggleWorld: function() {
+    if (this.isOverWorld) {
+      this.currentWorld = this.netherWorld;
+      this.isOverWorld = false;
+      console.log("Teleported to the Netherworld.");
+    } else {
+      this.currentWorld = this.overWorld;
+      this.isOverWorld = true;
+      console.log("Teleported to the Overworld.");
+    }
+    // You might want to trigger a redraw or update the game display here
+  }
+};
+
+// Example of how to access the current world and toggle it:
+console.log("Current World:", gameState.currentWorld);
+gameState.toggleWorld();
+console.log("Current World:", gameState.currentWorld);
+gameState.toggleWorld();
+console.log("Current World:", gameState.currentWorld);
