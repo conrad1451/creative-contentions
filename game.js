@@ -21,3 +21,5 @@ ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
 ctx.fillStyle = fillColor;
 ctx.fill();
 ctx.closePath();
+
+console.log("Hi Mom!");
