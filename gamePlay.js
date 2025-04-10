@@ -374,12 +374,12 @@ const character = {
   chatOpened: false, // Moved chatOpened to the character object
   
   ifAKeyIsPressed: function() {
-    if (!chatOpened || keyCode === SHIFT) {
+    if (!this.chatOpened || keyCode === SHIFT) {
       keys[keyCode] = true;
     } else {
       switch (keyCode) {
         case ENTER:
-          chatOpened = false;
+          this.chatOpened = false;
           if (input !== "") {
             if (input.substr(0, 1) === "/") {
               executeCommands();
@@ -621,6 +621,19 @@ const character = {
       console.log("Best Armor Hack is inactive. Armor types reset.");
     }
   },
+  
+  chatControl: function(){
+    noStroke();
+    if(keys[84])
+    {
+        if(!this.chatOpened) { this.chatOpened = true; }
+        keys[84] = false;
+    }  
+        
+    textSize(15);
+    
+    drawChatArea(this.chatOpened, input);
+  },
 
   getEffectiveArmor: function() {
     if (this.bestArmorHack) {
@@ -633,7 +646,26 @@ const character = {
 
   getArmorDetails: function() {
     return `Helmet Type: ${this.armorType.helmetType}, Shield Type: ${this.armorType.shieldType}, Pants Type: ${this.armorType.pantsType}, Shoes Type: ${this.armorType.shoesType}`;
-  }
+  },
+  
+  drawChatArea: function(chatOpened, input){
+    if(chatOpened)
+    {
+      chatTextInput(input, 0, 385, 400, 15);
+      displayChatHistory();
+    }
+    else
+    {
+      for(var i = messages.length-10; i < messages.length; i++)
+      {
+        if(messages[i] !== undefined && msgTimers[i] > 0)
+        {
+          displaySentMessage(messages, msgTimers, i);
+          msgTimers[i]--;
+        }
+      }
+    }
+  },
 };
 
 
