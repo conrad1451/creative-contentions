@@ -217,6 +217,64 @@ const netherWorldMap2 =[
 //     specs[blockTargeted[0]][blockTargeted[1]][10] = burnTime;
 // };
 
+const block = {
+  blockStrength: null,
+  
+  // degradeTargetedBlock becomes degradeBlock
+
+  degradeTargetedBlock: function(a, b, theBlockDurabilities) {
+    selDurability = theBlockDurabilities[world[a][b]];
+    
+    for(var i = 307; i <= 311; i++)
+    {
+        if(quickSelectBar[barSlot] === i)
+        {
+            var itemID = quickSelectBar[barSlot];
+            var divideAmount = (itemID - 305 + theBlockDurabilities[world[a][b]] /  50);
+            selDurability = selDurability / divideAmount;
+        }
+    }
+    
+    /*if(world[a][b] !== 0)
+    {
+    broadcast(selDurability);
+    }*/
+    
+    blockTargeted = [a, b];
+    blockStrength = selDurability;
+  },
+
+  breakBlocks: function(theBlockDurability){
+    if(this.blockStrength===null)
+    { this.degradeTargetedBlock(a, b, theBlockDurability); }
+
+    if(this.blockStrength <= 0)
+    {
+        harvestBlock();
+        this.blockStrength = null;
+    
+        if(world[a][b] !== 0)
+        {
+            var theItemID = quickSelectBar[barSlot];
+            var degradeAmount =  degradeByAmount(theItemID);
+            
+            quickSelectBarSpecs[barSlot] -= degradeAmount;
+        }
+
+        world[a][b] = 0;
+    }
+    else if(this.blockStrength !== null)
+    {
+        if(blockTargeted[0] === a && blockTargeted[1] === b)
+        { this.blockStrength--; }
+        else
+        { this.blockStrength = null; }
+    }
+  },
+
+}
+
+
 const gameState = {
   overWorld: overWorldMap,
   netherWorld: netherWorldMap,
@@ -230,6 +288,47 @@ const gameState = {
   time: 0,
   night: false,
   sunPos: 1000, // Initialize sunPos
+
+  //var blockDurability = []; becomes 
+  // 
+  blockDurability: {
+    0: 0,
+    1: 1, 
+    2: 10,
+    3: 10,
+    4: 70,
+    5: 35,
+    6: 50,
+    7: 30,
+    8: 20,
+    9: 5,
+    15: 0,
+    16: 0,
+    17: 0,
+    19: 15,
+    20: 10,
+    21: 10,
+    22: 80,
+    23: 85,
+    24: 80,
+    25: 90,
+    26: 50,
+    27: 140,
+    28: 30,
+    29: 30,
+    30: 30,
+    31: 5,
+    32: 30,
+    33: 90,
+    34: 50,
+    35: 70,
+    36: 100,
+    37: 90,
+    38: 95,
+    39: 115, 
+  },
+  
+  // degradeTargetedBlock
 
   toggleWorld: function() {
     if (this.isOverWorld) {
@@ -785,7 +884,8 @@ const character = {
         
     textSize(15);
     
-    character.drawChatArea(this.chatOpened, input);
+    // character.drawChatArea(this.chatOpened, input);
+    this.drawChatArea(this.chatOpened, input);
   },
 
   getEffectiveArmor: function() {
@@ -824,7 +924,8 @@ const character = {
   drawChatArea: function(chatOpened, input){
     if(chatOpened)
     {
-      character.chatTextInput(input, 0, 385, 400, 15);
+      // character.chatTextInput(input, 0, 385, 400, 15);
+      this.chatTextInput(input, 0, 385, 400, 15);
       gameState.displayChatHistory();
     }
     else
@@ -839,6 +940,30 @@ const character = {
       }
     }
   },
+  
+  
+  breakBlockAbility: function(){ 
+    if(!mouseIsPressed)
+    { blockStrength = null; }
+
+    if(mouseIsPressed && !inventory && !news)
+    {
+        if(mouseButton === LEFT && world[a][b] !== 18)
+        { 
+            if(world[a][b]<10 || world[a][b]>14){ 
+              // CHQ: from here, call the break blocks method of the target 
+              gameState.blockDurability;
+              // breakBlocks moved from character to block object
+              // breakBlocks(blockDurability); 
+            } 
+        }
+        else if(world[a][b] === 18){ 
+          //FIXME: CHQ: define teleport
+          // teleport(); 
+        }
+    }
+  },
+
 };
 
 
