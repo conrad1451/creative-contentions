@@ -789,6 +789,14 @@ const character = {
 
 // Example of how to call normalMode and specialMode within your game loop:
 function gameLoop() {
+
+  if (gameState.heartsShowing){
+    gameState.setGamePlayMode("normalMode");
+  }
+  else{
+    gameState.setGamePlayMode("specialMode");
+  }
+  
   if (gameState.isNormalMode()) {
     gameState.normalMode();
   } else if (gameState.isSpecialMode()) {
