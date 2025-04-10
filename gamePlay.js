@@ -518,10 +518,10 @@ const character = {
   position: { x: 1, y: 1 },
   bestArmorHack: false,
   armorType: {
-    helmetType: "",
-    shieldType: "",
-    pantsType: "",
-    shoesType: ""
+    helmetType: 332,
+    shieldType: 321,
+    pantsType: 330,
+    shoesType: 335
   },
 
   chatOpened: false, // Moved chatOpened to the character object
