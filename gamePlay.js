@@ -99,6 +99,124 @@ const netherWorldMap2 =[
 [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],
 [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]];
 
+
+// var inBounds = function(val, lb, ub, lbInclusive, ubInclusive)
+// {
+//     if (lbInclusive)
+//     {
+//         if (ubInclusive)
+//         {
+//              return (val >= lb && val <= ub);
+//         }
+//         else
+//         {
+//              return (val >= lb && val < ub);
+//         }
+//     }
+//     else 
+//     {
+//         if (ubInclusive)
+//         {
+//              return (val > lb && val <= ub);
+//         }
+//         else
+//         {
+//              return (val > lb && val < ub);
+//         }
+//     }
+// };
+
+// var inRectangularBounds = function(x, lb_x, ub_x, y, lb_y, ub_y)
+// {
+// 	var xCoordInBounds = inBounds(x, lb_x, ub_x, true, true);
+// 	var yCoordInBounds = inBounds(y, lb_y, ub_y, true, true);
+
+// 	return xCoordInBounds && yCoordInBounds;
+// };
+
+// var interactWithFurnace = function()
+// {
+//     var targetFurnace = specs[blockTargeted[0]][blockTargeted[1]];
+    
+//     for(var i = 0; i <= 10; i++)
+//     {
+//         if(specs[blockTargeted[0]][blockTargeted[1]][i] === undefined)
+//         {
+//             specs[blockTargeted[0]][blockTargeted[1]][i] = 0;
+//         }
+//     }
+
+//     var fuel = targetFurnace[0];
+//     var fuelStacks = targetFurnace[1];
+//     var fuelSpecs = targetFurnace[2];
+    
+//     var smeltingTime = targetFurnace[3];
+    
+//     var item = targetFurnace[4];
+//     var itemStacks = targetFurnace[5];
+//     var itemSpecs = targetFurnace[6];
+    
+//     var smeltedItem = targetFurnace[7];
+//     var smeltedStacks = targetFurnace[8];
+//     var smeltedSpecs = targetFurnace[9];
+    
+//     var burnTime = targetFurnace[10];
+    
+//     /*
+//     255, 50, 40, 40
+//     255, 130, 40, 40
+//     255, 240, 40, 40
+//     */
+
+//     var xBounds = inBounds(mouseX, 255, 295, false, false);
+//     var yBottomBounds = inBounds(mouseY, 240, 280, false, false);
+//     var yMiddleBounds = inBounds(mouseY, 130, 170, false, false);
+//     var yTopBounds = inBounds(mouseY, 50, 90, false, false);
+    
+//     var mouseInFurnaceBottomArea = (xBounds && yBottomBounds);
+    
+//     var mouseInFurnaceMiddleArea = (xBounds && yMiddleBounds);
+    
+//     var mouseInFurnaceTopArea = (xBounds && yTopBounds);
+    
+//     // Conrad: top seems to be where smelted items are
+//     // 		collected, middle area where the fuel goes, and
+//     //               bottom area where the items to be smelted goes
+    
+//     if(mouseInFurnaceBottomArea && mouseIsPressed)
+//     {
+//         furnaceSmeltedItemCollection(smeltedItem, smeltedStacks, fuel);
+//     }
+    
+//     if(mouseInFurnaceMiddleArea && mouseIsPressed)
+//     {
+//         // furnaceFuelArea(smeltedItem, smeltedStacks, fuel, fuelStacks, fuelSpecs);
+//         furnaceFuelArea(fuel, fuelStacks, fuelSpecs);
+//     }
+    
+//     if(mouseInFurnaceTopArea && mouseIsPressed)
+//     {
+//         // furnaceTopAreaFunctioning(smeltedItem, smeltedStacks, fuel, item, itemStacks, itemSpecs);
+//         furnaceTopAreaFunctioning(item, itemStacks, itemSpecs);
+//     }
+    
+//     specs[blockTargeted[0]][blockTargeted[1]][0] = fuel;
+//     specs[blockTargeted[0]][blockTargeted[1]][1] = fuelStacks;
+//     specs[blockTargeted[0]][blockTargeted[1]][2] = fuelSpecs;
+    
+//     specs[blockTargeted[0]][blockTargeted[1]][3] = smeltingTime;
+    
+//     specs[blockTargeted[0]][blockTargeted[1]][4] = item;
+//     specs[blockTargeted[0]][blockTargeted[1]][5] = itemStacks;
+//     specs[blockTargeted[0]][blockTargeted[1]][6] = itemSpecs;
+    
+//     specs[blockTargeted[0]][blockTargeted[1]][7] = smeltedItem;
+//     specs[blockTargeted[0]][blockTargeted[1]][8] = smeltedStacks;
+//     specs[blockTargeted[0]][blockTargeted[1]][9] = smeltedSpecs;
+    
+//     specs[blockTargeted[0]][blockTargeted[1]][10] = burnTime;
+// };
+
 const gameState = {
   overWorld: overWorldMap,
   netherWorld: netherWorldMap,
