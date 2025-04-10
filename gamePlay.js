@@ -188,173 +188,173 @@ const gameState = {
       rect(300, (this.time - 10800) / 50 - 150, 50, 50);
     }
   },
-
-normalMode: function() {
-  this.sunPos--;
-  this.time++;
-
-  var halfDayLength = 10000;
-
-  this.progressTime(halfDayLength);
-
-  strokeWeight(2);
-
-  if (this.isOverWorld) { // Corrected condition: Overworld logic
-    if (this.night) {
-      this.drawNightSky(halfDayLength);
+  
+  normalMode: function() {
+    this.sunPos--;
+    this.time++;
+  
+    var halfDayLength = 10000;
+  
+    this.progressTime(halfDayLength);
+  
+    strokeWeight(2);
+  
+    if (this.isOverWorld) { // Corrected condition: Overworld logic
+      if (this.night) {
+        this.drawNightSky(halfDayLength);
+      } else {
+        this.drawDaySky(halfDayLength);
+      }
     } else {
-      this.drawDaySky(halfDayLength);
+      // Conrad: Nether background color
+      background(173, 43, 0);
     }
-  } else {
-    // Conrad: Nether background color
-    background(173, 43, 0);
-  }
-},
-
-specialMode: function() {
-  // Conrad: changes sky color for special mode
-  background(10, 0, 56);
-
-  if (!this.shieldsShowing) {
-    this.shieldsShowingCount = 1000;
-    this.shieldsShowing = true;
-  } else {
-    this.shieldsShowingCount--;
-
-    if (this.shieldsShowingCount < 0) {
-      this.heartsShowing = false;
-      this.shieldsShowing = false;
-      this.onFire = true;
-    }
-    // Conrad: changes sun color for special mode
-    strokeWeight(5);
-    fill(255, 255, 255);
-    stroke(184, 184, 184);
-    rect(300, 400 - (this.shieldsShowingCount / 10) - 200, 50, 50);
-  }
-},
-// };
-
-
-drawDebugMenu: function(thetextSize) {
-  let textColor;
-  if (!this.isOverWorld || this.night) {
-    textColor = color(255, 255, 255);
-  } else {
-    textColor = color(0, 0, 0);
-  }
-  fill(textColor);
-  textSize(thetextSize);
-
-  text("Minecraft Khan Academy edition " + version, 10, 0 + (20 / 13) * thetextSize);
-  text("Bennimus Studios", 10, 10 + (20 / 13) * thetextSize);
-
-  text("Key Code: " + keyCode, 10, 30 + (20 / 13) * thetextSize);
-  text("Mouse Button: " + mouseButton, 10, 40 + (20 / 13) * thetextSize);
-
-  text("Inventory: " + inventory, 10, 50 + (20 / 13) * thetextSize);
-  text("Current block: " + world[a][b], 10, 60 + (20 / 13) * thetextSize);
-  text("Time: " + this.time, 120, 30 + (20 / 13) * thetextSize);
-
-  text("Sun Pos: " + this.sunPos.toFixed(0, 0), 120, 60);
-  text("Crouching: " + isSitting, 120, 50 + (20 / 13) * thetextSize);
-
-  text("Blocks generated: " + world[0].length, 120, 80);
-  text("Asteroids spawned: " + mobs.length, 120, 90);
-  text("Position: " + place, 240, 50);
-
-  text("Jump: " + jump, 240, 60);
-  text("Inside block: " + world[posA][posB], 240, 70);
-  text("Blocks fallen: " + blocksFallen, 240, 80);
-
-  text("x: " + posB + " (cursor " + b + ")", 10, 100);
-  text("y: " + posA + " (cursor " + a + ")", 10, 110);
-  text("x2: " + posB2, 10, 120);
-  text("y2: " + posA2, 10, 130);
-
-  text("Key ticks: " + keyTimer, 240, 90);
-  text("Sprinting: " + isSprinting, 240, 100);
-},
-
-drawFurnaceDebugMenu: function(thetextSize) {
-  let textColor;
-  if (!this.isOverWorld || this.night) {
-    textColor = color(255, 255, 255);
-  } else {
-    textColor = color(0, 0, 0);
-  }
-  fill(textColor);
-  textSize(thetextSize);
-
-  var choice = 0;
-
-  if (choice === 0) {
-    // furnaceDebugOpt1(thetextSize);
-    // Assuming furnaceDebugOpt2 is defined elsewhere
-    if (typeof furnaceDebugOpt2 === 'function') {
-      furnaceDebugOpt2(thetextSize);
+  },
+  
+  specialMode: function() {
+    // Conrad: changes sky color for special mode
+    background(10, 0, 56);
+  
+    if (!this.shieldsShowing) {
+      this.shieldsShowingCount = 1000;
+      this.shieldsShowing = true;
     } else {
-      text("furnaceDebugOpt2 is not defined", 10, 10 + (20 / 13) * thetextSize);
+      this.shieldsShowingCount--;
+  
+      if (this.shieldsShowingCount < 0) {
+        this.heartsShowing = false;
+        this.shieldsShowing = false;
+        this.onFire = true;
+      }
+      // Conrad: changes sun color for special mode
+      strokeWeight(5);
+      fill(255, 255, 255);
+      stroke(184, 184, 184);
+      rect(300, 400 - (this.shieldsShowingCount / 10) - 200, 50, 50);
     }
-  }
-},
-
-printChest: function(curChest) {
-  var fullText = "";
-  for (var l = 0; l < curChest.length; ++l) {
-    var theRowNow = curChest[l];
-    var sectionText = "";
-    for (var m = 0; m < theRowNow.length - 1; ++m) {
-      var unitText = "";
-      var theUnit = theRowNow[m];
-      unitText += ("[" + theUnit + "]" + ", ");
-      sectionText += unitText;
-    }
-
-    sectionText += ("[" + theRowNow[theRowNow.length - 1] + "]");
-
-    println("[");
-    println(sectionText);
-
-    if (l === curChest.length - 1) {
-      println("]");
+  },
+  // };
+  
+  
+  drawDebugMenu: function(thetextSize) {
+    let textColor;
+    if (!this.isOverWorld || this.night) {
+      textColor = color(255, 255, 255);
     } else {
-      println("],");
+      textColor = color(0, 0, 0);
     }
-  }
-},
-
-saveWorld: function() {
-  broadcast("World saved and printed.");
-  broadcast("Copy the code over var world.");
-  println("var world = [");
-
-  if (this.isOverWorld) {
-    printWorld(world);
-  } else {
-    printWorld(overWorld);
-  }
-
-  println("var netherWorld = [");
-
-  if (this.isOverWorld) {
-    printWorld(netherWorld);
-  } else {
-    printWorld(world);
-  }
-
-  println("\n\n\n");
-
-  println("var recordOfChests = [[");
-  if (recordOfChests.length > 0) {
-    this.printChest(recordOfChests[recordOfChests.length - 1]);
-  }
-
-  println("]]");
-  println("\n\n\n");
-  printInventoryData();
-  keyCode = 0;
-},
+    fill(textColor);
+    textSize(thetextSize);
+  
+    text("Minecraft Khan Academy edition " + version, 10, 0 + (20 / 13) * thetextSize);
+    text("Bennimus Studios", 10, 10 + (20 / 13) * thetextSize);
+  
+    text("Key Code: " + keyCode, 10, 30 + (20 / 13) * thetextSize);
+    text("Mouse Button: " + mouseButton, 10, 40 + (20 / 13) * thetextSize);
+  
+    text("Inventory: " + inventory, 10, 50 + (20 / 13) * thetextSize);
+    text("Current block: " + world[a][b], 10, 60 + (20 / 13) * thetextSize);
+    text("Time: " + this.time, 120, 30 + (20 / 13) * thetextSize);
+  
+    text("Sun Pos: " + this.sunPos.toFixed(0, 0), 120, 60);
+    text("Crouching: " + isSitting, 120, 50 + (20 / 13) * thetextSize);
+  
+    text("Blocks generated: " + world[0].length, 120, 80);
+    text("Asteroids spawned: " + mobs.length, 120, 90);
+    text("Position: " + place, 240, 50);
+  
+    text("Jump: " + jump, 240, 60);
+    text("Inside block: " + world[posA][posB], 240, 70);
+    text("Blocks fallen: " + blocksFallen, 240, 80);
+  
+    text("x: " + posB + " (cursor " + b + ")", 10, 100);
+    text("y: " + posA + " (cursor " + a + ")", 10, 110);
+    text("x2: " + posB2, 10, 120);
+    text("y2: " + posA2, 10, 130);
+  
+    text("Key ticks: " + keyTimer, 240, 90);
+    text("Sprinting: " + isSprinting, 240, 100);
+  },
+  
+  drawFurnaceDebugMenu: function(thetextSize) {
+    let textColor;
+    if (!this.isOverWorld || this.night) {
+      textColor = color(255, 255, 255);
+    } else {
+      textColor = color(0, 0, 0);
+    }
+    fill(textColor);
+    textSize(thetextSize);
+  
+    var choice = 0;
+  
+    if (choice === 0) {
+      // furnaceDebugOpt1(thetextSize);
+      // Assuming furnaceDebugOpt2 is defined elsewhere
+      if (typeof furnaceDebugOpt2 === 'function') {
+        furnaceDebugOpt2(thetextSize);
+      } else {
+        text("furnaceDebugOpt2 is not defined", 10, 10 + (20 / 13) * thetextSize);
+      }
+    }
+  },
+  
+  printChest: function(curChest) {
+    var fullText = "";
+    for (var l = 0; l < curChest.length; ++l) {
+      var theRowNow = curChest[l];
+      var sectionText = "";
+      for (var m = 0; m < theRowNow.length - 1; ++m) {
+        var unitText = "";
+        var theUnit = theRowNow[m];
+        unitText += ("[" + theUnit + "]" + ", ");
+        sectionText += unitText;
+      }
+  
+      sectionText += ("[" + theRowNow[theRowNow.length - 1] + "]");
+  
+      println("[");
+      println(sectionText);
+  
+      if (l === curChest.length - 1) {
+        println("]");
+      } else {
+        println("],");
+      }
+    }
+  },
+  
+  saveWorld: function() {
+    broadcast("World saved and printed.");
+    broadcast("Copy the code over var world.");
+    println("var world = [");
+  
+    if (this.isOverWorld) {
+      printWorld(world);
+    } else {
+      printWorld(overWorld);
+    }
+  
+    println("var netherWorld = [");
+  
+    if (this.isOverWorld) {
+      printWorld(netherWorld);
+    } else {
+      printWorld(world);
+    }
+  
+    println("\n\n\n");
+  
+    println("var recordOfChests = [[");
+    if (recordOfChests.length > 0) {
+      this.printChest(recordOfChests[recordOfChests.length - 1]);
+    }
+  
+    println("]]");
+    println("\n\n\n");
+    printInventoryData();
+    keyCode = 0;
+  },
 };
 const character = {
   name: "Hero",
