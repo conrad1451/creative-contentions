@@ -63,11 +63,6 @@ const gameState = {
   },
 
   progressTime: function(halfDayLength) {
-    // (this.time % 10000) > 1 --> night
-    // (this.time % 10000) > 2 --> back
-
-    // this.time = 0;
-
     if (this.time > halfDayLength * 1) {
       this.night = true;
     } else {
