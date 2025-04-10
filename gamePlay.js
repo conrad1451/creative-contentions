@@ -473,6 +473,41 @@ const gameState = {
     printInventoryData();
     keyCode = 0;
   },
+
+  displayChatHistory: function() {
+    // conrad: shows the last 20 chat messages by the character in the chat log
+    for(var i = messages.length-20; i < messages.length; i++)
+    {
+        if(messages[i] !== undefined)
+        {
+            fill(0, 0, 0, 60);
+            rect(0, i*15-messages.length*15+300, 300, 15);
+    
+            fill(255);
+            text(messages[i], 5, i*15-messages.length*15+313);
+    
+            msgTimers[i]--;
+        }
+    }
+  },
+  
+  displaySentMessage: function(messages, msgTimers, i) {
+    // Conrad: fading message box
+    if(msgTimers[i] > 20)
+    { fill(0, 0, 0, 60); }
+    else
+    { fill(0, 0, 0, msgTimers[i]*3); }
+
+    rect(0, i*15-messages.length*15+300, 300, 15);
+    
+    // Conrad: fading text of message
+    if(msgTimers[i] > 10)
+    { fill(255); }
+    else
+    { fill(255, 255, 255, msgTimers[i]*25.5); }
+
+    text(messages[i], 5, i*15-messages.length*15+313);
+  },
 };
 const character = {
   name: "Hero",
@@ -750,7 +785,7 @@ const character = {
         
     textSize(15);
     
-    drawChatArea(this.chatOpened, input);
+    character.drawChatArea(this.chatOpened, input);
   },
 
   getEffectiveArmor: function() {
@@ -765,12 +800,32 @@ const character = {
   getArmorDetails: function() {
     return `Helmet Type: ${this.armorType.helmetType}, Shield Type: ${this.armorType.shieldType}, Pants Type: ${this.armorType.pantsType}, Shoes Type: ${this.armorType.shoesType}`;
   },
+    
+  chatTextInput: function(input, x, y, length, width) {
+    // conrad: text input field
+    fill(0, 0, 0, 60);
+    rect(x, y, length, width);
+
+    fill(255);
+
+    // conrad: controls animation of blinking character input in text field
+    if(inputTimer % 25 < 15)
+    { 
+        text(input+"_", 5, 395); 
+    }
+    else
+    { 
+        text(input, 5, 395); 
+    }
+    
+    inputTimer++;
+  },
   
   drawChatArea: function(chatOpened, input){
     if(chatOpened)
     {
-      chatTextInput(input, 0, 385, 400, 15);
-      displayChatHistory();
+      character.chatTextInput(input, 0, 385, 400, 15);
+      gameState.displayChatHistory();
     }
     else
     {
@@ -778,7 +833,7 @@ const character = {
       {
         if(messages[i] !== undefined && msgTimers[i] > 0)
         {
-          displaySentMessage(messages, msgTimers, i);
+          gameState.displaySentMessage(messages, msgTimers, i);
           msgTimers[i]--;
         }
       }
@@ -802,6 +857,8 @@ function gameLoop() {
   } else if (gameState.isSpecialMode()) {
     gameState.specialMode();
   }
+
+  character.chatControl();
 
   // Your other game loop logic (rendering the world, character, UI, etc.)
   // would go here. For example:
