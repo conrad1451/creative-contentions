@@ -1,0 +1,802 @@
+
+which of the following functions have not yet been refactored and incorporated into the new program:
+
+
+
+
+List of other functions in the program:
+
+
+ initializeMaxStacks
+
+ initializeItemDurabilities
+
+ setTag
+
+ displayMouseCoords
+
+ broadcast
+
+ smeltedItemFromFurnace
+
+ minVal
+
+ inBounds
+
+ inRectangularBounds
+
+ putInMatchingBarSlot
+
+ putInEmptyBarSlot
+
+ putInMatchingInvSlot
+
+ putInEmptyInvSlot
+
+ amountPlacedInBar
+
+ amountPlacedInInventory
+
+ getItem
+
+ spawnMobs
+
+ generateWater
+
+ setToBlockType
+
+ generateOres
+
+ generateTrees
+
+ generateCactus
+
+ randomItemGenerator
+
+ dungeonGenerator
+
+ genWorld
+
+ spawnEntity
+
+ displayInventoryItems
+
+ generateCraftedItem
+
+ openInventory
+
+ openCrafting
+
+ openChest
+
+ furnaceDebugOpt2
+
+ furnaceDebugOpt1
+
+ furnaceBurning
+
+ notificationBanner
+
+ resetInventorySlots
+
+ displayNews
+
+ explode
+
+ displayLeaves
+
+ areaClearedForTree
+
+ displayResultantTree
+
+ obsidianTransformation
+
+ lavaFromCertainCircumstances
+
+ defaultBlock
+
+ displayTerrain
+
+ preStartScreen
+
+ deathMsg
+
+ welcomeMessage
+
+ loadSavedWorld
+
+ loadOrNewGame
+
+ updateHealthAnimation
+
+ armorStrength
+
+ progressTime
+
+ eatPorkChop
+
+ fallAmount
+
+ personBurning
+
+ grabWaterOrLava
+
+ printWorld
+
+ printInventoryData
+
+ printChest
+
+ saveWorld
+
+ degradeByAmount
+
+ furnaceInteraction
+
+ chestInteraction
+
+ degradeTargetedBlock
+
+ chatTextInput
+
+ displayChatHistory
+
+ displaySentMessage
+
+ teleport
+
+ shouldSprintLeft
+
+ sprintLeft
+
+ shouldSprintRight
+
+ sprintRight
+
+ createNewFurnace
+
+ createNewChest
+
+ normalMode
+
+ specialMode
+
+ specialModeTimeAndFrameRate
+
+ modeControl
+
+ openCloseDoor
+
+ openCloseUpperDoor
+
+ putOnArmorPiece
+
+ takeOffArmor
+
+ wearingArmor
+
+ autoGrab
+
+ manualGrab
+
+ grabCraftedItemsLargePlatform
+
+ grabCraftedItemsSmallPlatform
+
+ handQuickSelectBarItemSwap
+
+ takeFromQuickSelectBar
+
+ handInventoryItemSwap
+
+ takeFromInventory
+
+ interactWithInventoryItems
+
+ takeFromChest
+
+ interactWithQuickSelectBar
+
+ chestFunctioning
+
+ placeItemsOnCraftingTable
+
+ takeItemsOffCraftingTable
+
+ interactWithCraftingPlatform
+
+ fullInventoryPlatform
+
+ largeCraftingPlatform
+
+ furnaceSmeltedItemCollection
+
+ furnaceFuelArea
+
+ furnaceTopAreaFunctioning
+
+ interactWithFurnace
+
+ openFurnaceInterface
+
+ injuredByFall
+
+ shouldDoItNow
+
+ characterDirection
+
+ showCharacter
+
+ characterDrowning
+
+ pigMob
+
+ greenMob
+
+ herobrine
+
+ anothermob
+
+ handleMobTypes
+
+ spawnPrizeForKillingMob
+
+ mobRecoil
+
+ strikeMob
+
+ mobFunction
+
+ rightClickActions
+
+ blockDestructionProgression
+
+ harvestBlock
+
+ cursorDisplayControl
+
+ interfaceControls
+
+ debuggingControls
+
+ chatControl
+
+ breakBlocks
+
+ breakBlockAbility
+
+ reduceQtyAndSpecs
+
+ breakAndTakeBlock
+
+ armorDestroyed
+
+ resetBlockHeld
+
+ displayChestInfo
+
+ gravityFineTuningControl
+
+ mobSpawnControl
+
+ objectControl
+
+ displayShieldStrengthRemaining
+
+ characterMovementAndMisc
+
+ displayStats
+
+ characterGamePlay
+
+ armorDeflectingDamage
+
+ charInput
+
+ clearAllTheItems
+
+ giveTheItems
+
+ timeCaseInFunction
+
+ helpMessages
+
+ showUsername
+
+ killCharacter
+
+ killMobs
+
+ executeCommands 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+ 8am
+
+ implemented
+ We have successfully refactored and incorporated:
+
+    progressTime
+    drawDaySky
+    drawNightSky
+    drawDebugMenu
+    drawFurnaceDebugMenu
+    printChest
+    saveWorld
+    normalMode
+    specialMode
+
+
+NOT yet implemented
+initializeMaxStacks
+initializeItemDurabilities
+setTag
+displayMouseCoords
+broadcast
+smeltedItemFromFurnace
+minVal
+inBounds
+inRectangularBounds
+putInMatchingBarSlot
+putInEmptyBarSlot
+putInMatchingInvSlot
+putInEmptyInvSlot
+amountPlacedInBar
+amountPlacedInInventory
+getItem
+spawnMobs
+generateWater
+setToBlockType
+generateOres
+generateTrees
+generateCactus
+randomItemGenerator
+dungeonGenerator
+genWorld
+spawnEntity
+displayInventoryItems
+generateCraftedItem
+openInventory
+openCrafting
+openChest
+furnaceDebugOpt2
+furnaceDebugOpt1
+furnaceBurning
+notificationBanner
+resetInventorySlots
+displayNews
+explode
+displayLeaves
+areaClearedForTree
+displayResultantTree
+obsidianTransformation
+lavaFromCertainCircumstances
+defaultBlock
+displayTerrain
+preStartScreen
+deathMsg
+welcomeMessage
+loadSavedWorld
+loadOrNewGame
+updateHealthAnimation
+armorStrength
+eatPorkChop
+fallAmount
+personBurning
+grabWaterOrLava
+printWorld
+printInventoryData
+degradeByAmount
+furnaceInteraction
+chestInteraction
+degradeTargetedBlock
+chatTextInput
+displayChatHistory
+displaySentMessage
+teleport
+shouldSprintLeft
+sprintLeft
+shouldSprintRight
+sprintRight
+createNewFurnace
+createNewChest
+specialModeTimeAndFrameRate
+modeControl
+openCloseDoor
+openCloseUpperDoor
+putOnArmorPiece
+takeOffArmor
+wearingArmor
+autoGrab
+manualGrab
+grabCraftedItemsLargePlatform
+grabCraftedItemsSmallPlatform
+handQuickSelectBarItemSwap
+takeFromQuickSelectBar
+handInventoryItemSwap
+takeFromInventory
+interactWithInventoryItems
+takeFromChest
+interactWithQuickSelectBar
+chestFunctioning
+placeItemsOnCraftingTable
+takeItemsOffCraftingTable
+interactWithCraftingPlatform
+fullInventoryPlatform
+largeCraftingPlatform
+furnaceSmeltedItemCollection
+furnaceFuelArea
+furnaceTopAreaFunctioning
+interactWithFurnace
+openFurnaceInterface
+injuredByFall
+shouldDoItNow
+characterDirection
+showCharacter
+characterDrowning
+pigMob
+greenMob
+herobrine
+anothermob
+handleMobTypes
+spawnPrizeForKillingMob
+mobRecoil
+strikeMob
+mobFunction
+rightClickActions
+blockDestructionProgression
+harvestBlock
+cursorDisplayControl
+interfaceControls
+debuggingControls
+chatControl
+breakBlocks
+breakBlockAbility
+reduceQtyAndSpecs
+breakAndTakeBlock
+armorDestroyed
+resetBlockHeld
+displayChestInfo
+gravityFineTuningControl
+mobSpawnControl
+objectControl
+displayShieldStrengthRemaining
+characterMovementAndMisc
+displayStats
+characterGamePlay
+armorDeflectingDamage
+charInput
+clearAllTheItems
+giveTheItems
+timeCaseInFunction
+helpMessages
+showUsername
+killCharacter
+killMobs
+executeCommands
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+1248pm
+
+NOT implemented 
+    initializeMaxStacks
+    initializeItemDurabilities
+    setTag
+    displayMouseCoords
+    broadcast
+    smeltedItemFromFurnace
+    minVal
+    inBounds
+    inRectangularBounds
+    putInMatchingBarSlot
+    putInEmptyBarSlot
+    putInMatchingInvSlot
+    putInEmptyInvSlot
+    amountPlacedInBar
+    amountPlacedInInventory
+    getItem
+    spawnMobs
+    generateWater
+    setToBlockType
+    generateOres
+    generateTrees
+    generateCactus
+    randomItemGenerator
+    dungeonGenerator
+    genWorld
+    spawnEntity
+    displayInventoryItems
+    generateCraftedItem
+    openInventory
+    openCrafting
+    openChest
+    furnaceDebugOpt2
+    furnaceDebugOpt1
+    furnaceBurning
+    notificationBanner
+    resetInventorySlots
+    displayNews
+    explode
+    displayLeaves
+    areaClearedForTree
+    displayResultantTree
+    obsidianTransformation
+    lavaFromCertainCircumstances
+    defaultBlock
+    displayTerrain
+    preStartScreen
+    deathMsg
+    welcomeMessage
+    loadSavedWorld
+    loadOrNewGame
+    updateHealthAnimation
+    armorStrength
+    eatPorkChop
+    fallAmount
+    personBurning
+    grabWaterOrLava
+    printWorld
+    printInventoryData
+    printChest (while a basic version exists in gameState, the full logic might not be incorporated)
+    saveWorld (while a basic version exists in gameState, the full logic might not be incorporated)
+    degradeByAmount
+    furnaceInteraction
+    chestInteraction
+    degradeTargetedBlock
+    chatTextInput
+    displayChatHistory
+    displaySentMessage
+    teleport
+    shouldSprintLeft
+    sprintLeft
+    shouldSprintRight
+    sprintRight
+    createNewFurnace
+    createNewChest
+    specialModeTimeAndFrameRate
+    modeControl
+    openCloseDoor
+    openCloseUpperDoor
+    putOnArmorPiece
+    takeOffArmor
+    wearingArmor
+    autoGrab
+    manualGrab
+    grabCraftedItemsLargePlatform
+    grabCraftedItemsSmallPlatform
+    handQuickSelectBarItemSwap
+    takeFromQuickSelectBar
+    handInventoryItemSwap
+    takeFromInventory
+    interactWithInventoryItems
+    takeFromChest
+    interactWithQuickSelectBar
+    chestFunctioning
+    placeItemsOnCraftingTable
+    takeItemsOffCraftingTable
+    interactWithCraftingPlatform
+    fullInventoryPlatform
+    largeCraftingPlatform
+    furnaceSmeltedItemCollection
+    furnaceFuelArea
+    furnaceTopAreaFunctioning
+    interactWithFurnace
+    openFurnaceInterface
+    injuredByFall
+    shouldDoItNow
+    characterDirection
+    showCharacter
+    characterDrowning
+    pigMob
+    greenMob
+    herobrine
+    anothermob
+    handleMobTypes
+    spawnPrizeForKillingMob
+    mobRecoil
+    strikeMob
+    mobFunction
+    rightClickActions
+    blockDestructionProgression
+    harvestBlock
+    cursorDisplayControl
+    interfaceControls
+    debuggingControls
+    breakBlocks
+    breakBlockAbility
+    reduceQtyAndSpecs
+    breakAndTakeBlock
+    armorDestroyed
+    resetBlockHeld
+    displayChestInfo
+    gravityFineTuningControl
+    mobSpawnControl
+    objectControl
+    displayShieldStrengthRemaining
+    characterMovementAndMisc
+    displayStats
+    characterGamePlay
+    armorDeflectingDamage
+    charInput
+    clearAllTheItems
+    giveTheItems
+    timeCaseInFunction
+    helpMessages
+    showUsername
+    killCharacter
+    killMobs
+    executeCommands (called from character.ifAKeyIsPressed before it was removed, needs to be re-integrated)
+
+Essentially, almost all the game logic and functionality described by these function names still need to be incorporated into the gameState and character objects or other relevant parts of the program structure. We have only begun to refactor the very basic game state and character properties and some input handling.
+
+--------------------------------------------------------------------------------------------------------------------
+
+1259pm
+
+Okay, let's analyze the updated code and determine which of the listed functions have now been refactored and incorporated.
+
+Here's a breakdown of the functions based on the provided updates:
+
+Functions that appear to have been refactored and incorporated:
+
+    inBounds: The code for inBounds is now commented out, suggesting it might be replaced or its functionality moved elsewhere. However, it's not directly incorporated into gameState or character as a method.
+    inRectangularBounds: Similar to inBounds, the code is commented out.
+    interactWithFurnace: The code for interactWithFurnace is commented out.
+    degradeTargetedBlock: This function's logic has been moved to the block object and renamed to degradeTargetedBlock.
+    breakBlocks: This function's logic has been moved to the block object as the breakBlocks method. It now interacts with gameState.blockDurability.
+    progressTime: This function remains as a method of the gameState object.
+    normalMode: This function remains as a method of the gameState object.
+    specialMode: This function remains as a method of the gameState object.
+    displayChatHistory: This function remains as a method of the gameState object.
+    displaySentMessage: This function remains as a method of the gameState object.
+    chatControl: This function is now a method of the character object. It calls this.drawChatArea.
+    chatTextInput: This function is now a method of the character object.
+    drawChatArea: This function is now a method of the character object.
+    breakBlockAbility: This function is now a method of the character object. It now calls block.breakBlocks(gameState.blockDurability).
+
+Functions that still do not appear to have been refactored and incorporated:
+
+    initializeMaxStacks
+    initializeItemDurabilities
+    setTag
+    displayMouseCoords
+    broadcast (called but not defined within gameState or character)
+    smeltedItemFromFurnace
+    minVal
+    putInMatchingBarSlot
+    putInEmptyBarSlot
+    putInMatchingInvSlot
+    putInEmptyInvSlot
+    amountPlacedInBar
+    amountPlacedInInventory
+    getItem
+    spawnMobs
+    generateWater
+    setToBlockType
+    generateOres
+    generateTrees
+    generateCactus
+    randomItemGenerator
+    dungeonGenerator
+    genWorld
+    spawnEntity
+    displayInventoryItems
+    generateCraftedItem
+    openInventory
+    openCrafting
+    openChest
+    furnaceDebugOpt2 (referenced but not defined in gameState)
+    furnaceDebugOpt1 (commented out in gameState)
+    furnaceBurning
+    notificationBanner
+    resetInventorySlots
+    displayNews
+    explode
+    displayLeaves
+    areaClearedForTree
+    displayResultantTree
+    obsidianTransformation
+    lavaFromCertainCircumstances
+    defaultBlock
+    displayTerrain
+    preStartScreen
+    deathMsg
+    welcomeMessage
+    loadSavedWorld
+    loadOrNewGame
+    updateHealthAnimation
+    armorStrength
+    eatPorkChop
+    fallAmount
+    personBurning
+    grabWaterOrLava
+    printWorld (called but not defined in gameState)
+    printInventoryData (called but not defined in gameState)
+    printChest (a basic version is in gameState, but full logic might be elsewhere)
+    saveWorld (a basic version is in gameState, but full logic might be elsewhere)
+    degradeByAmount (called in block.breakBlocks but not defined within block or gameState)
+    furnaceInteraction
+    chestInteraction
+    teleport (commented out in character.breakBlockAbility)
+    shouldSprintLeft
+    sprintLeft
+    shouldSprintRight
+    sprintRight
+    createNewFurnace
+    createNewChest
+    specialModeTimeAndFrameRate
+    modeControl
+    openCloseDoor
+    openCloseUpperDoor
+    putOnArmorPiece
+    takeOffArmor
+    wearingArmor
+    autoGrab
+    manualGrab
+    grabCraftedItemsLargePlatform
+    grabCraftedItemsSmallPlatform
+    handQuickSelectBarItemSwap
+    takeFromQuickSelectBar
+    handInventoryItemSwap
+    takeFromInventory
+    interactWithInventoryItems
+    takeFromChest
+    interactWithQuickSelectBar
+    chestFunctioning
+    placeItemsOnCraftingTable
+    takeItemsOffCraftingTable
+    interactWithCraftingPlatform
+    fullInventoryPlatform
+    largeCraftingPlatform
+    furnaceSmeltedItemCollection (called but not defined in interactWithFurnace)
+    furnaceFuelArea (called but not fully defined in interactWithFurnace)
+    furnaceTopAreaFunctioning (called but not fully defined in interactWithFurnace)
+    interactWithFurnace (commented out)
+    openFurnaceInterface
+    injuredByFall
+    shouldDoItNow
+    characterDirection
+    showCharacter
+    characterDrowning
+    pigMob
+    greenMob
+    herobrine
+    anothermob
+    handleMobTypes
+    spawnPrizeForKillingMob
+    mobRecoil
+    strikeMob
+    mobFunction
+    rightClickActions
+    blockDestructionProgression
+    harvestBlock (called in block.breakBlocks but not defined within block or gameState)
+    cursorDisplayControl
+    interfaceControls
+    debuggingControls
+    reduceQtyAndSpecs (called in block.breakBlocks as degradeByAmount)
+    breakAndTakeBlock
+    armorDestroyed
+    resetBlockHeld
+    displayChestInfo
+    gravityFineTuningControl
+    mobSpawnControl
+    objectControl
+    displayShieldStrengthRemaining
+    characterMovementAndMisc
+    displayStats
+    characterGamePlay
+    armorDeflectingDamage
+    charInput (called within character.ifAKeyIsPressed)
+    clearAllTheItems
+    giveTheItems
+    timeCaseInFunction
+    helpMessages
+    showUsername
+    killCharacter
+    killMobs
+    executeCommands (called within character.ifAKeyIsPressed)
+
+In summary, while some progress has been made with functions related to block breaking and chat, the vast majority of the listed functions still need to be refactored and integrated into the new gameState and character objects or other appropriate modules. The commented-out inBounds, inRectangularBounds, and interactWithFurnace functions suggest these areas are likely to be addressed in future refactoring. Additionally, several functions are called but not defined within the provided code snippets, indicating dependencies on other parts of the program.
