@@ -587,7 +587,7 @@ const character = {
           break;
       }
     }
-},
+  },
   
   updateArmorTypes: function() {
     if (this.bestArmorHack) {
