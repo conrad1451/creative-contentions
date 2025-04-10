@@ -109,27 +109,27 @@ const gameState = {
     }
   },
 
-  normalMode: function() {
-    this.sunPos--;
-    this.time++;
+normalMode: function() {
+  this.sunPos--;
+  this.time++;
 
-    var halfDayLength = 10000;
+  var halfDayLength = 10000;
 
-    this.progressTime(halfDayLength);
+  this.progressTime(halfDayLength);
 
-    strokeWeight(2);
+  strokeWeight(2);
 
-    if (!nether) {
-      if (this.night) {
-        this.drawNightSky(halfDayLength);
-      } else {
-        this.drawDaySky(halfDayLength);
-      }
+  if (this.isOverWorld) { // Corrected condition: Overworld logic
+    if (this.night) {
+      this.drawNightSky(halfDayLength);
     } else {
-      // Conrad: Nether background color
-      background(173, 43, 0);
+      this.drawDaySky(halfDayLength);
     }
-  },
+  } else {
+    // Conrad: Nether background color
+    background(173, 43, 0);
+  }
+},
 
   specialMode: function() {
     // Conrad: changes sky color for special mode
