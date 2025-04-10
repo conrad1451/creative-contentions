@@ -370,3 +370,220 @@ requestAnimationFrame(gameLoop);
 
 // Example of how to switch back to normal mode:
 // gameState.setGamePlayMode("normalMode");
+
+
+ ifAKeyIsPressed: function() {
+    if (!chatOpened || keyCode === SHIFT) {
+      keys[keyCode] = true;
+    } else {
+      switch (keyCode) {
+        case ENTER:
+          chatOpened = false;
+          if (input !== "") {
+            if (input.substr(0, 1) === "/") {
+              executeCommands();
+            } else {
+              broadcast("<" + username + "> " + input);
+            }
+          }
+          input = "";
+          break;
+
+        case 32:
+          input += " ";
+          break;
+
+        case 48:
+          charInput(")", "0");
+          break;
+
+        case 49:
+          charInput("!", "1");
+          break;
+
+        case 50:
+          charInput("@", "2");
+          break;
+
+        case 51:
+          charInput("#", "3");
+          break;
+
+        case 52:
+          charInput("$", "4");
+          break;
+
+        case 53:
+          charInput("%", "5");
+          break;
+
+        case 54:
+          charInput("^", "6");
+          break;
+
+        case 55:
+          charInput("&", "7");
+          break;
+
+        case 56:
+          charInput("*", "8");
+          break;
+
+        case 57:
+          charInput("(", "9");
+          break;
+
+        case 65:
+          charInput("A", "a");
+          break;
+
+        case 66:
+          charInput("B", "b");
+          break;
+
+        case 67:
+          charInput("C", "c");
+          break;
+
+        case 68:
+          charInput("D", "d");
+          break;
+
+        case 69:
+          charInput("E", "e");
+          break;
+
+        case 70:
+          charInput("F", "f");
+          break;
+
+        case 71:
+          charInput("G", "g");
+          break;
+
+        case 72:
+          charInput("H", "h");
+          break;
+
+        case 73:
+          charInput("I", "i");
+          break;
+
+        case 74:
+          charInput("J", "j");
+          break;
+
+        case 75:
+          charInput("K", "k");
+          break;
+
+        case 76:
+          charInput("L", "l");
+          break;
+
+        case 77:
+          charInput("M", "m");
+          break;
+
+        case 78:
+          charInput("N", "n");
+          break;
+
+        case 79:
+          charInput("O", "o");
+          break;
+
+        case 80:
+          charInput("P", "p");
+          break;
+
+        case 81:
+          charInput("Q", "q");
+          break;
+
+        case 82:
+          charInput("R", "r");
+          break;
+
+        case 83:
+          charInput("S", "s");
+          break;
+
+        case 84:
+          charInput("T", "t");
+          break;
+
+        case 85:
+          charInput("U", "u");
+          break;
+
+        case 86:
+          charInput("V", "v");
+          break;
+
+        case 87:
+          charInput("W", "w");
+          break;
+
+        case 88:
+          charInput("X", "x");
+          break;
+
+        case 89:
+          charInput("Y", "y");
+          break;
+
+        case 90:
+          charInput("Z", "z");
+          break;
+
+        case 186:
+          charInput(":", ";");
+          break;
+
+        case 187:
+          charInput("+", "=");
+          break;
+
+        case 188:
+          charInput("<", ",");
+          break;
+
+        case 189:
+          charInput("_", "-");
+          break;
+
+        case 190:
+          charInput(">", ".");
+          break;
+
+        case 191:
+          charInput("?", "/");
+          break;
+
+        case 192:
+          charInput("~", "`");
+          break;
+
+        case 219:
+          charInput("{", "[");
+          break;
+
+        case 220:
+          charInput("|", "\\");
+          break;
+
+        case 221:
+          charInput("}", "]");
+          break;
+
+        case 222:
+          charInput('"', "'");
+          break;
+        
+        case CONTROL:
+          input = input.substr(0,input.length-1);
+          break;
+      }
+    }
+};
