@@ -29,6 +29,9 @@ const gameState = {
   shieldsShowingCount: 0,
   heartsShowing: true,
   onFire: false,
+  time: 0,
+  night: false,
+  sunPos: 1000, // Initialize sunPos
 
   toggleWorld: function() {
     if (this.isOverWorld) {
@@ -55,25 +58,77 @@ const gameState = {
     return this.gamePlayMode === "normalMode";
   },
 
-  isSpecialMode: function() {
+ isSpecialMode: function() {
     return this.gamePlayMode === "specialMode";
   },
 
+  progressTime: function(halfDayLength) {
+    // (this.time % 10000) > 1 --> night
+    // (this.time % 10000) > 2 --> back
+
+    // this.time = 0;
+
+    if (this.time > halfDayLength * 1) {
+      this.night = true;
+    } else {
+      this.night = false;
+    }
+    if (this.time === halfDayLength * 2) {
+      this.time = 0;
+    }
+  },
+
+  drawDaySky: function(halfDayLength) {
+    if (this.time > 0 && this.time < 250) {
+      background(255, 209, 94);
+    } else {
+      background(189, 206, 255);
+    }
+
+    fill(253, 255, 191);
+    stroke(255, 255, 255);
+    strokeWeight(5);
+
+    if (this.time <= 5000) {
+      this.sunPos -= 0.5;
+      rect(300, this.sunPos / 70 + 100, 50, 50);
+    } else if (this.time >= 5000) {
+      this.sunPos = 1000;
+      rect(300, (this.time + 3000) / 50 - 150, 50, 50);
+    }
+  },
+
+  drawNightSky: function(halfDayLength) {
+    background(10, 0, 56);
+
+    fill(255, 255, 255);
+    stroke(209, 209, 209);
+    strokeWeight(5);
+
+    if (this.time <= 15000) {
+      this.sunPos -= 0.5;
+      rect(300, this.sunPos / 70 + 100, 50, 50);
+    } else if (this.time >= 1.5 * halfDayLength) {
+      this.sunPos = 1000;
+      rect(300, (this.time - 10800) / 50 - 150, 50, 50);
+    }
+  },
+
   normalMode: function() {
-    sunPos--;
-    time++;
+    this.sunPos--;
+    this.time++;
 
     var halfDayLength = 10000;
 
-    progressTime(halfDayLength);
+    this.progressTime(halfDayLength);
 
     strokeWeight(2);
 
     if (!nether) {
-      if (night) {
-        drawNightSky(halfDayLength);
+      if (this.night) {
+        this.drawNightSky(halfDayLength);
       } else {
-        drawDaySky(halfDayLength);
+        this.drawDaySky(halfDayLength);
       }
     } else {
       // Conrad: Nether background color
@@ -185,6 +240,11 @@ function gameLoop() {
   // Request the next frame (if using requestAnimationFrame)
   requestAnimationFrame(gameLoop);
 }
+
+// Initialize gameState properties used in these methods
+gameState.time = 0;
+gameState.night = false;
+gameState.sunPos = 1000;
 
 // Start the game loop
 requestAnimationFrame(gameLoop);
