@@ -291,88 +291,9 @@ const character = {
     shoesType: ""
   },
 
-  updateArmorTypes: function() {
-    if (this.bestArmorHack) {
-      if (this.uniformArmorLevel === 3) {
-        this.armorType.helmetType = 328;
-        this.armorType.shieldType = 329;
-        this.armorType.pantsType = 330;
-        this.armorType.shoesType = 331;
-      } else if (this.uniformArmorLevel === 2) {
-        this.armorType.helmetType = 324;
-        this.armorType.shieldType = 325;
-        this.armorType.pantsType = 326;
-        this.armorType.shoesType = 327;
-      } else if (this.uniformArmorLevel === 1) {
-        this.armorType.helmetType = 320;
-        this.armorType.shieldType = 321;
-        this.armorType.pantsType = 322;
-        this.armorType.shoesType = 323;
-      } else {
-        this.armorType.helmetType = 332;
-        this.armorType.shieldType = 333;
-        this.armorType.pantsType = 334;
-        this.armorType.shoesType = 335;
-      }
-      console.log("Best Armor Hack triggered! Armor types updated.");
-    } else {
-      this.armorType.helmetType = 332; 
-      this.armorType.shieldType = 321; 
-      this.armorType.pantsType = 330; 
-      this.armorType.shoesType = 335; 
-      console.log("Best Armor Hack is inactive. Armor types reset.");
-    }
-  },
-
-  getEffectiveArmor: function() {
-    if (this.bestArmorHack) {
-      console.log("Best Armor Hack is active. Effective armor might be influenced by armor types.");
-      return this.uniformArmorLevel * 10;
-    } else {
-      return this.uniformArmorLevel;
-    }
-  },
-
-  getArmorDetails: function() {
-    return `Helmet Type: ${this.armorType.helmetType}, Shield Type: ${this.armorType.shieldType}, Pants Type: ${this.armorType.pantsType}, Shoes Type: ${this.armorType.shoesType}`;
-  }
-};
-
-
-// Example of how to call normalMode and specialMode within your game loop:
-function gameLoop() {
-  if (gameState.isNormalMode()) {
-    gameState.normalMode();
-  } else if (gameState.isSpecialMode()) {
-    gameState.specialMode();
-  }
-
-  // Your other game loop logic (rendering the world, character, UI, etc.)
-  // would go here. For example:
-  // drawWorld();
-  // showCharacter();
-  // drawHUD();
-
-  // Request the next frame (if using requestAnimationFrame)
-  requestAnimationFrame(gameLoop);
-}
-
-// Initialize gameState properties used in these methods
-gameState.time = 0;
-gameState.night = false;
-gameState.sunPos = 1000;
-
-// Start the game loop
-requestAnimationFrame(gameLoop);
-
-// Example of how to switch to special mode:
-// gameState.setGamePlayMode("specialMode");
-
-// Example of how to switch back to normal mode:
-// gameState.setGamePlayMode("normalMode");
-
-
- ifAKeyIsPressed: function() {
+  chatOpened: false, // Moved chatOpened to the character object
+  
+  ifAKeyIsPressed: function() {
     if (!chatOpened || keyCode === SHIFT) {
       keys[keyCode] = true;
     } else {
@@ -587,3 +508,84 @@ requestAnimationFrame(gameLoop);
       }
     }
 };
+  
+  updateArmorTypes: function() {
+    if (this.bestArmorHack) {
+      if (this.uniformArmorLevel === 3) {
+        this.armorType.helmetType = 328;
+        this.armorType.shieldType = 329;
+        this.armorType.pantsType = 330;
+        this.armorType.shoesType = 331;
+      } else if (this.uniformArmorLevel === 2) {
+        this.armorType.helmetType = 324;
+        this.armorType.shieldType = 325;
+        this.armorType.pantsType = 326;
+        this.armorType.shoesType = 327;
+      } else if (this.uniformArmorLevel === 1) {
+        this.armorType.helmetType = 320;
+        this.armorType.shieldType = 321;
+        this.armorType.pantsType = 322;
+        this.armorType.shoesType = 323;
+      } else {
+        this.armorType.helmetType = 332;
+        this.armorType.shieldType = 333;
+        this.armorType.pantsType = 334;
+        this.armorType.shoesType = 335;
+      }
+      console.log("Best Armor Hack triggered! Armor types updated.");
+    } else {
+      this.armorType.helmetType = 332; 
+      this.armorType.shieldType = 321; 
+      this.armorType.pantsType = 330; 
+      this.armorType.shoesType = 335; 
+      console.log("Best Armor Hack is inactive. Armor types reset.");
+    }
+  },
+
+  getEffectiveArmor: function() {
+    if (this.bestArmorHack) {
+      console.log("Best Armor Hack is active. Effective armor might be influenced by armor types.");
+      return this.uniformArmorLevel * 10;
+    } else {
+      return this.uniformArmorLevel;
+    }
+  },
+
+  getArmorDetails: function() {
+    return `Helmet Type: ${this.armorType.helmetType}, Shield Type: ${this.armorType.shieldType}, Pants Type: ${this.armorType.pantsType}, Shoes Type: ${this.armorType.shoesType}`;
+  }
+};
+
+
+// Example of how to call normalMode and specialMode within your game loop:
+function gameLoop() {
+  if (gameState.isNormalMode()) {
+    gameState.normalMode();
+  } else if (gameState.isSpecialMode()) {
+    gameState.specialMode();
+  }
+
+  // Your other game loop logic (rendering the world, character, UI, etc.)
+  // would go here. For example:
+  // drawWorld();
+  // showCharacter();
+  // drawHUD();
+
+  // Request the next frame (if using requestAnimationFrame)
+  requestAnimationFrame(gameLoop);
+}
+
+// Initialize gameState properties used in these methods
+gameState.time = 0;
+gameState.night = false;
+gameState.sunPos = 1000;
+
+// Start the game loop
+requestAnimationFrame(gameLoop);
+
+// Example of how to switch to special mode:
+// gameState.setGamePlayMode("specialMode");
+
+// Example of how to switch back to normal mode:
+// gameState.setGamePlayMode("normalMode");
+
