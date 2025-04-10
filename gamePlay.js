@@ -232,8 +232,8 @@ specialMode: function() {
     stroke(184, 184, 184);
     rect(300, 400 - (this.shieldsShowingCount / 10) - 200, 50, 50);
   }
-}
-};
+},
+// };
 
 
 drawDebugMenu: function(thetextSize) {
@@ -354,8 +354,8 @@ saveWorld: function() {
   println("\n\n\n");
   printInventoryData();
   keyCode = 0;
+},
 };
-
 const character = {
   name: "Hero",
   health: 100,
