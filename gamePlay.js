@@ -225,7 +225,7 @@ const gameState = {
   gamePlayMode: "normalMode",
   shieldsShowing: false,
   shieldsShowingCount: 0,
-  heartsShowing: true,
+  heartsShowing: false,
   onFire: false,
   time: 0,
   night: false,
