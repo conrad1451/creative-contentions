@@ -244,6 +244,38 @@ printChest: function(curChest) {
   }
 },
 
+saveWorld: function() {
+  broadcast("World saved and printed.");
+  broadcast("Copy the code over var world.");
+  println("var world = [");
+
+  if (this.isOverWorld) {
+    printWorld(world);
+  } else {
+    printWorld(overWorld);
+  }
+
+  println("var netherWorld = [");
+
+  if (this.isOverWorld) {
+    printWorld(netherWorld);
+  } else {
+    printWorld(world);
+  }
+
+  println("\n\n\n");
+
+  println("var recordOfChests = [[");
+  if (recordOfChests.length > 0) {
+    this.printChest(recordOfChests[recordOfChests.length - 1]);
+  }
+
+  println("]]");
+  println("\n\n\n");
+  printInventoryData();
+  keyCode = 0;
+};
+
 const character = {
   name: "Hero",
   health: 100,
